@@ -1,0 +1,28 @@
+<?php
+// signup.php
+
+include_once("functions.php");
+
+$email = $_POST['email'];
+$password = $_POST['password'];
+
+if (isset($_POST['email']) && isset($_POST['password'])){
+    user_res_auth($conn, $email);
+
+    $create_user = "INSERT INTO users (email, pass_word) VALUES ('$email', '$password')";
+
+    if ($conn->query($create_user) === TRUE) {
+        echo " user data inserted successfully\n";
+        echo " email: $email \n";
+        echo " password: $password \n";
+        header("Location: index.html");
+    }else{
+      die("not good (insert user table)");
+    }
+  
+} else {
+    die("ERROR: empty email or password");
+}
+
+
+?>
