@@ -21,29 +21,18 @@ Signup page: http://www.uccainc.com/csp1/signup.html
 ## 6/19
 Web Structure
 
-/csp1
-
-├── index.php
-
-├── dbh.php
-
-├── functions.php
-
-├── pics
-
-└── pages (currently everything in root)
-
-    ├── index.html (done)
-    
-    ├── signup.html (done)
-    
-    ├── login.html (done)
-    
-    ├── profile.html
-    
-    ├── rooms.html
-    
-    └── create-room.html
+    /csp1
+    ├── index.php
+    ├── dbh.php
+    ├── functions.php
+    ├── pics
+    └── pages (currently everything in root)
+        ├── index.html (done)
+        ├── signup.html (done)
+        ├── login.html (done)
+        ├── profile.html
+        ├── rooms.html
+        └── create-room.html
 
 
 ## 6/17
