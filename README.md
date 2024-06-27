@@ -12,23 +12,37 @@ Future TODO: add email verification.
 Worked on index and login/signup front and back end. 
 
 Home page: http://uccainc.com/csp1/index.html
+
 Login page: http://www.uccainc.com/csp1/login.html
+
 Signup page: http://www.uccainc.com/csp1/signup.html
 
 
 ## 6/19
 Web Structure
+
 /csp1
+
 ├── index.php
+
 ├── dbh.php
+
 ├── functions.php
+
 ├── pics
-└── pages
-    ├── index.html (room preview)
-    ├── signup.html
-    ├── login.html
+
+└── pages (currently everything in root)
+
+    ├── index.html (done)
+    
+    ├── signup.html (done)
+    
+    ├── login.html (done)
+    
     ├── profile.html
-    ├── rooms.html (all rooms)
+    
+    ├── rooms.html
+    
     └── create-room.html
 
 
