@@ -1,6 +1,6 @@
 # XueDa
 
-Website home page: http://uccainc.com/csp1/index.html
+Website home page: http://uccainc.com/csp1/index.php
 
 ## 6/26
 Tested and fixed login/signup pages.
@@ -11,7 +11,7 @@ Future TODO: add email verification.
 ## 6/24
 Worked on index and login/signup front and back end. 
 
-Home page: http://uccainc.com/csp1/index.html
+Home page: http://uccainc.com/csp1/index.php
 
 Login page: http://www.uccainc.com/csp1/login.html
 
