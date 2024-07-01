@@ -9,8 +9,6 @@
   
   if (!$conn){
     die("Connection failed: " . $conn->connect_error);
-  }else{
-      echo "connection good";
   }
 
 ?>
