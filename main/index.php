@@ -74,6 +74,21 @@ include_once('dbh.php');
                         <button>Join</button>
                     </div>
                 </div>
+
+                <?php
+                    $sql = "SELECT * FROM rooms";
+
+                    $res = $conn->query($sql);
+
+                    if($res->num_rows > 0){
+                        while($row = $res->fetch_assoc()){
+                            echo "<p>" . $row['title'] . "</p>";
+                        }
+                        
+                    }
+
+                ?>
+                        
             </div>
             
             
