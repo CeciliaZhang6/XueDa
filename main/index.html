@@ -1,3 +1,8 @@
+<?php
+include_once('dbh.php');
+
+?>
+
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +18,7 @@
             <ul>
                 <li><a href="http://www.uccainc.com/csp1/login.html">Login</a></li>
                 <li><a href="http://www.uccainc.com/csp1/signup.html">Sign Up</a></li>
-                <li><a href="index.php?page=create-room">Create Room</a></li>
+                <li><a href="http://www.uccainc.com/csp1/create-room.html">Create Room</a></li>
             </ul>
         </nav>
     </header>
@@ -23,6 +28,16 @@
                 <h1>学搭 | XueDa</h1>
                 <p class="subtitle">Your virtual home for <span id="animated-text">event holding</span></p>
             </div>
+             <div class="user-welcome">
+            <?php
+                session_start();
+                if (isset($_SESSION['curr_user'])) {
+                    echo "Welcome, " . $_SESSION['curr_user'] . "!";
+                } else {
+                    echo "Welcome, Guest!";
+                }
+            ?>
+        </div>
             <div class="dots-container">
                 <span class="dot" data-index="0"></span>
                 <span class="dot" data-index="1"></span>
@@ -60,11 +75,14 @@
                     </div>
                 </div>
             </div>
+            
+            
+
 
             <div class="all-rooms">
                 <button>All Rooms</button>
             </div>
-            
+           
         </section>
     </main>
     <footer>
