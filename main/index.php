@@ -18,7 +18,7 @@ include_once('dbh.php');
             <ul>
                 <li><a href="http://www.uccainc.com/csp1/login.html">Login</a></li>
                 <li><a href="http://www.uccainc.com/csp1/signup.html">Sign Up</a></li>
-                <li><a href="http://www.uccainc.com/csp1/create-room.html">Create Room</a></li>
+                <li><a href="http://www.uccainc.com/csp1/create_room.html">Create Room</a></li>
             </ul>
         </nav>
     </header>
