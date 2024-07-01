@@ -258,3 +258,64 @@ footer {
 .auth-form a:hover {
     text-decoration: underline;
 }
+
+/* create room form */
+.create-room {
+    padding: 2em;
+    text-align: center;
+}
+
+#create-room-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#create-room-form label {
+    margin: 1em 0 0.5em;
+}
+
+#create-room-form input,
+#create-room-form textarea {
+    width: 80%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+}
+
+#create-room-form button {
+    padding: 0.5em 2em;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#create-room-form button:hover {
+    background-color: #555;
+}
+
+/* room display */
+.room-display {
+    padding: 2em;
+    text-align: center;
+}
+
+.room-item {
+    position: relative;
+    width: 80%;
+    margin: 10px auto;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.room-item h3 {
+    margin: 0.5em 0;
+}
+
+.room-item p {
+    margin: 0.5em 0;
+}
