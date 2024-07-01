@@ -1,0 +1,49 @@
+<!-- create_room.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Room | 学搭 | XueDa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="http://www.uccainc.com/csp1/index.html">Home</a></li>
+                <li><a href="http://www.uccainc.com/csp1/login.html">Login</a></li>
+                <li><a href="http://www.uccainc.com/csp1/signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="create-room">
+            <h2>Create Your Room</h2>
+
+            <form id="create-room-form" action="create_room.php" method="post">
+
+                <label for="title">Room Title</label>
+                <input type="text" id="title" name="title" required>
+                
+                <label for="description">Room Description</label>
+                <textarea id="description" name="description" required></textarea>
+                
+                <label for="link">Room Link (e.g. Zoom link)</label>
+                <input type="url" id="link" name="link" required>
+                
+                <button type="submit">Create Room</button>
+            </form>
+            
+        </section>
+        <section class="room-display" id="room-display">
+            <!-- Room details will be displayed here -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 学搭 | XueDa</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
