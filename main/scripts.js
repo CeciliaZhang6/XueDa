@@ -62,10 +62,19 @@ document.addEventListener('DOMContentLoaded', function() {
     function fetchData(url){
         fetch(url).then(response => response.json()).then(data => {
             console.log(data);
+            data.forEach(element => {
+                Object.keys(element).forEach(key => {
+                    const item1 = `${key}:${element[key]}`;
+                    console.log(item1);
+                })
+                
+                
+            });
+
         })
     }
 
     const url = "http://www.uccainc.com/csp1/roomAPI.php";
-    
+
     fetchData(url);
 });
