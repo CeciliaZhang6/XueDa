@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log(data);
             data.forEach(element => {
                 Object.keys(element).forEach(key => {
-                    const item1 = `${key}:${element[key]}`;
+                    const row = `${key}:${element[key]}`;
                     console.log(row["title"]);
                 })
                 
