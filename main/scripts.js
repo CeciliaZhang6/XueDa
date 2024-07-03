@@ -56,4 +56,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // TODO: fix dot display for showing or not showing after clicking
 
     autoSlide();
+
+
+    // display room items
+    function fetchData(url){
+        fetch(url).then(response => response.json()).then(data => {
+            console.log(data);
+        })
+    }
+
+    const url = "http://www.uccainc.com/csp1/roomAPI.php";
+    
+    fetchData(url);
 });
