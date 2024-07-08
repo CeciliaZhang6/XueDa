@@ -115,7 +115,7 @@ nav ul li a:focus {
 }
 
 .room-item img {
-    width: 100%;
+    width: 30%;
     height: 200px; 
     object-fit: cover; 
     display: block;
@@ -127,7 +127,7 @@ nav ul li a:focus {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
     padding: 1em;
     display: none;

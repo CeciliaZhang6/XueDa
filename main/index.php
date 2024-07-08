@@ -1,5 +1,5 @@
 <?php
-include_once('dbh.php');
+    include_once('dbh.php');
 
 ?>
 
@@ -49,50 +49,10 @@ include_once('dbh.php');
         </section>
         <section class="popular-rooms">
             <h2>Popular Public Rooms</h2>
-            <div class="rooms-list">
-                <div class="room-item">
-                    <img src="pic/room1.jpg" alt="Room 1">
-                    <div class="room-info">
-                        <h3>Room Title 1</h3>
-                        <p>Room Description 1</p>
-                        <button>Join</button>
-                    </div>
-                </div>
-                <div class="room-item">
-                    <img src="pic/room2.jpg" alt="Room 2">
-                    <div class="room-info">
-                        <h3>Room Title 2</h3>
-                        <p>Room Description 2</p>
-                        <button>Join</button>
-                    </div>
-                </div>
-                <div class="room-item">
-                    <img src="pic/room3.jpg" alt="Room 3">
-                    <div class="room-info">
-                        <h3>Room Title 3</h3>
-                        <p>Room Description 3</p>
-                        <button>Join</button>
-                    </div>
-                </div>
+            <div class="rooms-list" id="rooms-list">
 
-                <?php
-                    $sql = "SELECT * FROM rooms";
-
-                    $res = $conn->query($sql);
-
-                    if($res->num_rows > 0){
-                        while($row = $res->fetch_assoc()){
-                            echo "<p>" . $row['title'] . "</p>";
-                        }
-                        
-                    }
-
-                ?>
-                        
             </div>
             
-            
-
 
             <div class="all-rooms">
                 <button>All Rooms</button>
