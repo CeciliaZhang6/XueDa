@@ -48,6 +48,25 @@ function user_res_auth($conn, $given_email){
 
 }
 
+function create_base_dir($conn, $uid){
+    $base_dir = "users";
+    $sub_dir_1 = "rooms";
+    $sub_dir_2 = "img";
 
+    // content
+    $user_post_api = "user_post_api.json";
+
+    // construct path
+    // /users/uid/sub_dir_name/file_name
+    $path = "/" . $base_dir . "/" . $uid . "/" . $sub_dir_1 . "/" . $user_post_api;
+
+    $res = mkdir($path);
+
+    if ($res === FALSE){
+        die("mkdir failed");
+    }
+
+
+}
 
 ?>
