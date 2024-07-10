@@ -51,7 +51,7 @@ function user_res_auth($conn, $given_email){
 function create_base_dir($conn, $uid){
     $base_dir = "users";
     $sub_dir_1 = "rooms";
-    $sub_dir_2 = "img";
+    $sub_dir_2 = "pfp";
 
     // content
     $user_post_api = "user_post_api.json";
