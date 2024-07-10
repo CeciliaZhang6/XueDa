@@ -1,4 +1,4 @@
-# XueDa
+# XueDa Dev Log
 
 Website home page: http://uccainc.com/csp1/index.php
 
