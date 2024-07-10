@@ -1,6 +1,25 @@
-# XueDa
+# XueDa Dev Log
 
 Website home page: http://uccainc.com/csp1/index.php
+
+TODO:
+- fix front end UI
+- add checking login status for create room page
+- create room page front end design
+
+## 7/10
+
+## 7/8
+Advanced posting done. Now it uses roomAPI to fetch and post rooms. 
+Started working on update APIs when inserting new rooms, and personal profile pages. 
+
+## 7/3
+Simple posting (old method, echo everything) worked. 
+Added APIs for rooms, started working on advanced posting using APIs and fetching in js. 
+
+## 7/1
+Fixed file names & link names. 
+Working on posting feature. 
 
 ## 6/26
 Tested and fixed login/signup pages.
