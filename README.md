@@ -7,6 +7,8 @@ TODO:
 - add checking login status for create room page
 - create room page front end design
 
+## 7/10
+
 ## 7/8
 Advanced posting done. Now it uses roomAPI to fetch and post rooms. 
 Started working on update APIs when inserting new rooms, and personal profile pages. 
