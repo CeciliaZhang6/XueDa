@@ -15,6 +15,9 @@ if (isset($_POST['email']) && isset($_POST['password'])){
         echo " user data inserted successfully\n";
         echo " email: $email \n";
         echo " password: $password \n";
+
+        create_base_dir($conn, $email);
+        
         header("Location: index.html");
     }else{
       die("not good (insert user table)");
