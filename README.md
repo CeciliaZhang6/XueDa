@@ -8,6 +8,8 @@ TODO:
 - create room page front end design
 
 ## 7/10
+System Architecture:
+Client --(request)--> API --(get)--> Other Client(post, profile) --(respond)--> Client 
 
 ## 7/8
 Advanced posting done. Now it uses roomAPI to fetch and post rooms. 
