@@ -58,7 +58,7 @@ function create_base_dir($conn, $uid){
 
     // construct path
     // /users/uid/sub_dir_name/file_name
-    $path = "/" . $base_dir . "/" . $uid . "/" . $sub_dir_1 . "/" . $user_post_api;
+    $path = "/home/uccaciyo/public_html/csp1/users/" . $base_dir . "/" . $uid . "/" . $sub_dir_1 . "/" . $user_post_api;
 
     $res = mkdir($path);
 
@@ -96,7 +96,7 @@ function cur_user_post($conn, $sql, $email){
 
     // create dir if not exist
     if (!is_dir($dir)){
-        mkdir_($dir, 0777, true);
+        mkdir($dir, 0777, true);
     }
 
     $file_path = $dir . "/cur_user_post.json";
