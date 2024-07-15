@@ -58,20 +58,20 @@ function create_base_dir($conn, $uid){
 
     // construct path
     // /users/uid/sub_dir_name/file_name
-    $path = "/home/uccaciyo/public_html/csp1/users/" . $base_dir . "/" . $uid . "/" . $sub_dir_1 . "/" . $user_post_api;
+    $path = "/home/uccaciyo/public_html/csp1/" . $base_dir . "/" . $uid . "/" . $sub_dir_1 . "/" . $user_post_api;
 
     $res = mkdir($path);
 
     if ($res === FALSE){
-        die("mkdir failed - rooms");
+        die(" ERROR: mkdir failed - rooms");
     }
 
-    $path = "/" . $base_dir . "/" . $uid . "/" . $sub_dir_2;
+    $path = "/home/uccaciyo/public_html/csp1/" . $base_dir . "/" . $uid . "/" . $sub_dir_2;
 
     $res = mkdir($path);
 
     if ($res === FALSE){
-        die("mkdir failed - pfp");
+        die(" ERROR: mkdir failed - pfp");
     }
 
 
