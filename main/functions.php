@@ -64,12 +64,25 @@ function create_base_dir($conn, $uid){
     // check valid path
     if (!file_exists($path)){
         $res = mkdir($path, 0755, true); // 0755 = normal user
+
+        if ($res === FALSE){
+            die(" ERROR: mkdir failed - rooms");
+        } else {
+            echo(" Rooms Dir created. ");
+        }
     }
 
-    if ($res === FALSE){
-        die(" ERROR: mkdir failed - rooms");
+    // create file path
+    $file_path = $path . "/" . $user_post_api;
+
+    // empty json array
+    $arr = [];
+    $json_arr = json_encode($arr);
+
+    if (file_put_contents($file_path, $json_arr) !== FALSE){
+        echo " user_post_api created!!";
     } else {
-        echo(" Rooms Dir created. ");
+        die(" user_post_api failed to create...");
     }
 
     // $path = "/home/uccaciyo/public_html/csp1/" . $base_dir . "/" . $uid . "/" . $sub_dir_2;
