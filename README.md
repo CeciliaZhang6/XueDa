@@ -3,9 +3,22 @@
 Website home page: http://uccainc.com/csp1/index.php
 
 TODO:
-- fix front end UI
 - add checking login status for create room page
 - create room page front end design
+- blocked list
+
+DONE:
+- fix front end UI
+
+## 7/15
+MVC Architecture for loading user profile
+M = model
+V = view
+C = controller
+
+Model represents data and internal logic that determines how to manage data and logic flow. 
+View is the front end presented to the user. 
+Controller is the middleware that connects front end request to the backend model. 
 
 ## 7/10
 System Architecture:
