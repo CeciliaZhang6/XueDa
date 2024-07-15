@@ -52,28 +52,51 @@ function create_base_dir($conn, $uid){
     $base_dir = "users";
     $sub_dir_1 = "rooms";
     $sub_dir_2 = "pfp";
+    $sub_dir_3 = "blocked";
 
     // content
     $user_post_api = "user_post_api.json";
 
     // construct path
-    // /users/uid/sub_dir_name/file_name
+    // /home/uccaciyo/public_html/csp1/users/test3@xd.com/rooms/user_post_api.json
     $path = "/home/uccaciyo/public_html/csp1/" . $base_dir . "/" . $uid . "/" . $sub_dir_1 . "/" . $user_post_api;
 
-    $res = mkdir($path);
+    // check valid path
+    if (!file_exists($path)){
+        $res = mkdir($path, 0755, true); // 0755 = normal user
+    }
 
     if ($res === FALSE){
         die(" ERROR: mkdir failed - rooms");
+    } else {
+        echo(" Rooms Dir created. ");
     }
 
     $path = "/home/uccaciyo/public_html/csp1/" . $base_dir . "/" . $uid . "/" . $sub_dir_2;
 
-    $res = mkdir($path);
+    // check valid path
+    if (!file_exists($path)){
+        $res = mkdir($path, 0755, true); // 0755 = normal user
+    }
 
     if ($res === FALSE){
         die(" ERROR: mkdir failed - pfp");
+    } else {
+        echo(" Pfp Dir created. ");
     }
 
+    $path = "/home/uccaciyo/public_html/csp1/" . $base_dir . "/" . $uid . "/" . $sub_dir_3;
+
+    // check valid path
+    if (!file_exists($path)){
+        $res = mkdir($path, 0755, true); // 0755 = normal user
+    }
+
+    if ($res === FALSE){
+        die(" ERROR: mkdir failed - blocked");
+    } else {
+        echo(" Blocked Dir created. ");
+    }
 
 }
 
@@ -96,7 +119,7 @@ function cur_user_post($conn, $sql, $email){
 
     // create dir if not exist
     if (!is_dir($dir)){
-        mkdir($dir, 0777, true);
+        mkdir($dir, 0777, true); // 0777 = super user
     }
 
     $file_path = $dir . "/cur_user_post.json";
