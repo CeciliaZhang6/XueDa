@@ -18,7 +18,7 @@ if (isset($_POST['email']) && isset($_POST['password'])){
 
         create_base_dir($conn, $email);
         
-        header("Location: index.html");
+        header("Location: index.php");
     }else{
       die("not good (insert user table)");
     }
