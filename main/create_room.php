@@ -1,7 +1,13 @@
 <?php
 
-// include_once("dbh.php");
+session_start();
 include_once("functions.php");
+
+// check user login
+if (!isset($_SESSION['curr_user']) || $_SESSION['curr_user'] === 'guest') {
+    header("Location: login.php?message=Please log in to create a room");
+    exit();
+}
 
 $title = $_POST['title'];
 $description = $_POST['description'];

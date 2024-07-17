@@ -1,6 +1,10 @@
 <?php
     include_once('dbh.php');
 
+    session_start();
+    if (isset($_SESSION['curr_user']) === FALSE) {
+        $_SESSION['curr_user'] = "guest";
+    }
 ?>
 
 <!-- index.html -->
@@ -15,11 +19,13 @@
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="http://www.uccainc.com/csp1/login.html">Login</a></li>
-                <li><a href="http://www.uccainc.com/csp1/signup.html">Sign Up</a></li>
-                <li><a href="http://www.uccainc.com/csp1/create_room.html">Create Room</a></li>
-            </ul>
+        <div id="welcome-message">Welcome, <span id="username">guest</span>!</div>
+        <ul>
+            <li id="login-signup"><a href="http://www.uccainc.com/csp1/login.html">Login</a></li>
+            <li id="view-profile" style="display: none;"><a href="http://www.uccainc.com/csp1/profile.php">View Profile</a></li>
+            <li id="logout" style="display: none;"><a href="http://www.uccainc.com/csp1/logout.php">Logout</a></li>
+            <li><a href="http://www.uccainc.com/csp1/create_room.html">Create Room</a></li>
+        </ul>
         </nav>
     </header>
     <main>
@@ -28,27 +34,25 @@
                 <h1>学搭 | XueDa</h1>
                 <p class="subtitle">Your virtual home for <span id="animated-text">event holding</span></p>
             </div>
-             <div class="user-welcome">
-            <?php
-                session_start();
-                if (isset($_SESSION['curr_user'])) {
-                    echo "Welcome, " . $_SESSION['curr_user'] . "!";
-                } else {
-                    echo "Welcome, Guest!";
-                }
-            ?>
-        </div>
+
             <div class="dots-container">
                 <span class="dot" data-index="0"></span>
                 <span class="dot" data-index="1"></span>
                 <span class="dot" data-index="2"></span>
             </div>
         </section>
+
+        <script>
+            var currentUser = <?php echo json_encode($currentUser); ?>;
+        </script>
+
         <section class="search-bar">
             <input type="text" placeholder="Search rooms...">
         </section>
+
         <section class="popular-rooms">
             <h2>Popular Public Rooms</h2>
+
             <div class="rooms-list" id="rooms-list">
 
             </div>

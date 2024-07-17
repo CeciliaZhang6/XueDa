@@ -89,6 +89,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     const h3 = document.createElement('h3');
                     h3.textContent = room.title;
 
+                    // host email
+                    console.log("start title");
+                    const host = document.createElement('p');
+                    host.textContent = room.host_id;
+
                     // p description
                     console.log("start description");
                     const p = document.createElement('p');
@@ -127,4 +132,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const url = "http://www.uccainc.com/csp1/roomAPI.php";
 
     fetchData(url);
+
+    function updateNavBar() {
+        const usernameSpan = document.getElementById('username');
+        const loginSignup = document.getElementById('login-signup');
+        const viewProfile = document.getElementById('view-profile');
+        const logout = document.getElementById('logout');
+
+        usernameSpan.textContent = currentUser;
+
+        if (currentUser !== 'guest') {
+            loginSignup.style.display = 'none';
+            viewProfile.style.display = 'inline-block';
+            logout.style.display = 'inline-block';
+        } else {
+            loginSignup.style.display = 'inline-block';
+            viewProfile.style.display = 'none';
+            logout.style.display = 'none';
+        }
+    }
+
+    updateNavBar();
 });
