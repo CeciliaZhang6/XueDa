@@ -2,6 +2,7 @@
 // functions.php
 
 include_once("dbh.php");
+session_start();
 
 function login($conn, $given_email, $given_password){
     $sql = "SELECT * FROM users";
@@ -16,6 +17,7 @@ function login($conn, $given_email, $given_password){
             if($email === $given_email){
                 if($password === $given_password){
                     $_SESSION['curr_user'] = $email;
+                    $_SESSION["login_status"] = TRUE;
                     header("Location: index.php");
                 } else {
                     die("bad password");

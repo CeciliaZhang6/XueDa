@@ -2,7 +2,7 @@
     include_once('dbh.php');
 
     session_start();
-    if ($_SESSION['login_status'] === FALSE) {
+    if ($_SESSION['login_status'] === FALSE || $_SESSION['curr_user'] === "") {
         $_SESSION['curr_user'] = "guest";
     }
 ?>
