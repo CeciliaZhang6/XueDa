@@ -21,7 +21,7 @@
         <nav>
         <div id="welcome-message">Welcome, <span id="username"><?php echo $_SESSION['curr_user'] ?></span>!</div>
         <ul>
-            <li id="login-signup"><a href="http://www.uccainc.com/csp1/login.html">Login</a></li>
+            <li id="login-signup"><a href="http://www.uccainc.com/csp1/login.php">Login</a></li>
             <li id="view-profile" style="display: none;"><a href="http://www.uccainc.com/csp1/profile.php">View Profile</a></li>
             <li id="logout" style="display: none;"><a href="http://www.uccainc.com/csp1/logout.php">Logout</a></li>
             <li><a href="http://www.uccainc.com/csp1/create_room.html">Create Room</a></li>
