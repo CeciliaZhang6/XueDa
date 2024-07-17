@@ -12,22 +12,22 @@ if (isset($_GET['message'])) {
     $message = htmlspecialchars($_GET['message']);
 }
 
-// Process login form submission
+// process login form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
     $login_status = login($conn, $email, $password);
 
-    if ($login_status) {
-        $_SESSION["login_status"] = TRUE;
-        $_SESSION["curr_user"] = $email;
-        // Redirect to home page or dashboard after successful login
-        header("Location: index.php");
-        exit();
-    } else {
-        $message = "Login failed. Please try again.";
-    }
+    // if ($login_status) {
+    //     $_SESSION["login_status"] = TRUE;
+    //     $_SESSION["curr_user"] = $email;
+    //     // Redirect to home page or dashboard after successful login
+    //     header("Location: index.php");
+    //     exit();
+    // } else {
+    //     $message = "Login failed. Please try again.";
+    // }
 }
 ?>
 
@@ -59,6 +59,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
     </main>
-    <script src="login.js"></script>
 </body>
 </html>

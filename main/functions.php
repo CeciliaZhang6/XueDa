@@ -18,7 +18,11 @@ function login($conn, $given_email, $given_password){
                 if($password === $given_password){
                     $_SESSION['curr_user'] = $email;
                     $_SESSION["login_status"] = TRUE;
+                    // echo "curr_user" . $_SESSION['curr_user'];
+                    // echo "logged in:" . $_SESSION['login_status'];
                     header("Location: index.php");
+
+
                 } else {
                     die("bad password");
                 }
@@ -26,7 +30,7 @@ function login($conn, $given_email, $given_password){
             
         }
 
-        echo " user not found \n";
+        echo " ERROR: user not found \n";
         
     }
 
