@@ -10,10 +10,15 @@ TODO:
 DONE:
 - fix front end UI
 
+## 7/17
+
 ## 7/15
 MVC Architecture for loading user profile
+
 M = model
+
 V = view
+
 C = controller
 
 Model represents data and internal logic that determines how to manage data and logic flow. 
