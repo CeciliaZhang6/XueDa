@@ -2,7 +2,7 @@
     include_once('dbh.php');
 
     session_start();
-    if (isset($_SESSION['curr_user']) === FALSE) {
+    if ($_SESSION['login_status'] === FALSE) {
         $_SESSION['curr_user'] = "guest";
     }
 ?>
@@ -19,7 +19,7 @@
 <body>
     <header>
         <nav>
-        <div id="welcome-message">Welcome, <span id="username">guest</span>!</div>
+        <div id="welcome-message">Welcome, <span id="username"><?php echo $_SESSION['curr_user'] ?></span>!</div>
         <ul>
             <li id="login-signup"><a href="http://www.uccainc.com/csp1/login.html">Login</a></li>
             <li id="view-profile" style="display: none;"><a href="http://www.uccainc.com/csp1/profile.php">View Profile</a></li>

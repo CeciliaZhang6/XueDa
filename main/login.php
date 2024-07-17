@@ -4,6 +4,7 @@
 session_start();
 include_once("functions.php");
 
+$_SESSION["login_status"] = FALSE;
 $message = '';
 
 // Check if there's a message in the URL
@@ -16,9 +17,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $result = login($conn, $email, $password);
+    $login_status = login($conn, $email, $password);
 
-    if ($result) {
+    if ($login_status) {
+        $_SESSION["login_status"] = TRUE;
+        $_SESSION["curr_user"] = $email;
         // Redirect to home page or dashboard after successful login
         header("Location: index.php");
         exit();

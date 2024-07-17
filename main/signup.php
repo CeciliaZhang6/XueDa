@@ -17,6 +17,9 @@ if (isset($_POST['email']) && isset($_POST['password'])){
         echo " password: $password \n";
 
         create_base_dir($conn, $email);
+
+        $_SESSION["login_status"] = TRUE;
+        $_SESSION["curr_user"] = $email;
         
         header("Location: index.php");
     }else{
