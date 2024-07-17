@@ -18,19 +18,19 @@ function login($conn, $given_email, $given_password){
                 if($password === $given_password){
                     $_SESSION['curr_user'] = $email;
                     $_SESSION["login_status"] = TRUE;
-                    // echo "curr_user" . $_SESSION['curr_user'];
-                    // echo "logged in:" . $_SESSION['login_status'];
-                    header("Location: index.php");
-
+                    return 1; // login success
+                    // header("Location: index.php");
 
                 } else {
-                    die("bad password");
+                    echo("bad password");
+                    return 0; // incorrect password
                 }
             }
             
         }
 
         echo " ERROR: user not found \n";
+        return -1; // email not found
         
     }
 

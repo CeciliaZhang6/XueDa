@@ -5,6 +5,9 @@
     if ($_SESSION['login_status'] === FALSE || $_SESSION['curr_user'] === "") {
         $_SESSION['curr_user'] = "guest";
     }
+    <script>
+        var currentUser = <?php echo json_encode($currentUser); ?>;
+    </script>
 ?>
 
 <!-- index.html -->
@@ -42,9 +45,7 @@
             </div>
         </section>
 
-        <script>
-            var currentUser = <?php echo json_encode($currentUser); ?>;
-        </script>
+        
 
         <section class="search-bar">
             <input type="text" placeholder="Search rooms...">
