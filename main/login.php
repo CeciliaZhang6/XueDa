@@ -30,11 +30,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif ($login_status === -1){
         $message = "Email not found. Please sign up first.";
     } else {
-        
+
     }
 }
 ?>
 
+<!-- TODO:  use echo to convert html to php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body class="auth-page">
     <main>
-        <div class="login-banner">
+        <div class="fullscreen-form-container login-banner">
             <div class="auth-form login-form">
                 <h1>学搭 | XueDa</h1>
                 <?php
@@ -53,13 +54,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     echo "<div style='color: red;'>$message</div>";
                 }
                 ?>
-                <form id="loginForm" action="login.php" method="post">
+                <form id="loginForm" action="http://www.uccainc.com/csp1/login.php" method="post">
                     <input type="email" id="email" placeholder="Email" name="email" required>
                     <input type="password" id="password" placeholder="Password" name="password" required>
                     <button type="submit">Login</button>
                 </form>
-                <p>Don't have an account? <a href="signup.php" style="color: blue;">Sign up</a></p>
-                <p><a href="index.php">Back to Home</a></p>
+                <p>Don't have an account? <a href="http://www.uccainc.com/csp1/signup.html" style="color: blue;">Sign up</a></p>
+                <p><a href="http://www.uccainc.com/csp1/index.php">Back to Home</a></p>
             </div>
         </div>
     </main>

@@ -194,38 +194,19 @@ footer {
     }
 }
 
-/* auth pages */
-.auth-page {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
-
-.login-banner {
+/* forms (signup, login, create room)*/
+.fullscreen-form-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('pic/banner2.jpg') center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.signup-banner {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('pic/room3.jpg') center/cover no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .auth-form {
@@ -238,9 +219,10 @@ footer {
 }
 
 .auth-form h1 {
-    text-align: center; 
-    margin-bottom: 1em; 
-    color: #333; 
+    text-align: center;
+    margin-bottom: 1em;
+    color: #333;
+    font-size: 2em;
 }
 
 .auth-form form {
@@ -248,12 +230,18 @@ footer {
     flex-direction: column;
 }
 
-.auth-form input {
+.auth-form input,
+.auth-form textarea {
     margin-bottom: 1em;
     padding: 0.5em;
     font-size: 1em;
     border: 1px solid #ddd;
     border-radius: 3px;
+}
+
+.auth-form textarea {
+    resize: vertical;
+    min-height: 100px;
 }
 
 .auth-form button {
@@ -285,40 +273,17 @@ footer {
     text-decoration: underline;
 }
 
-/* create room form */
-.create-room {
-    padding: 2em;
-    text-align: center;
+/* background images for each form */
+.login-banner {
+    background-image: url('pic/banner2.jpg');
 }
 
-#create-room-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.signup-banner {
+    background-image: url('pic/room3.jpg');
 }
 
-#create-room-form label {
-    margin: 1em 0 0.5em;
-}
-
-#create-room-form input,
-#create-room-form textarea {
-    width: 80%;
-    padding: 0.5em;
-    margin-bottom: 1em;
-}
-
-#create-room-form button {
-    padding: 0.5em 2em;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#create-room-form button:hover {
-    background-color: #555;
+.create-room-banner {
+    background-image: url('pic/room1.jpg');
 }
 
 /* room display */

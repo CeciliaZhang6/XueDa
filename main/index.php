@@ -5,11 +5,10 @@
     if ($_SESSION['login_status'] === FALSE || $_SESSION['curr_user'] === "") {
         $_SESSION['curr_user'] = "guest";
     }
-    <script>
-        var currentUser = <?php echo json_encode($currentUser); ?>;
-    </script>
-?>
+    
 
+
+echo '
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +21,7 @@
 <body>
     <header>
         <nav>
-        <div id="welcome-message">Welcome, <span id="username"><?php echo $_SESSION['curr_user'] ?></span>!</div>
+        <div id="welcome-message">Welcome, <span id="username"> . $_SESSION["curr_user"] . </span>!</div>
         <ul>
             <li id="login-signup"><a href="http://www.uccainc.com/csp1/login.php">Login</a></li>
             <li id="view-profile" style="display: none;"><a href="http://www.uccainc.com/csp1/profile.php">View Profile</a></li>
@@ -71,3 +70,6 @@
     <script src="scripts.js"></script>
 </body>
 </html>
+';
+
+?>

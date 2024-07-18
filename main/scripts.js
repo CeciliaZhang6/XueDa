@@ -68,39 +68,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 data.forEach(room => {
                     console.log("start fetching");
 
-                    console.log("start room-item");
                     // room-item
                     const roomItemDiv = document.createElement('div');
                     roomItemDiv.classList.add('room-item');
 
                     // img
-                    console.log("start img");
                     const img = document.createElement('img');
                     img.src = 'https://via.placeholder.com/150'; // Placeholder image
                     img.alt = room.title;
 
                     // room-info
-                    console.log("start room-info");
                     const roomInfoDiv = document.createElement('div');
                     roomInfoDiv.classList.add('room-info');
 
                     // h3 title
-                    console.log("start title");
                     const h3 = document.createElement('h3');
                     h3.textContent = room.title;
 
                     // host email
-                    console.log("start title");
                     const host = document.createElement('p');
                     host.textContent = room.host_id;
 
                     // p description
-                    console.log("start description");
                     const p = document.createElement('p');
                     p.textContent = room.description;
 
                     // join button
-                    console.log("start join button");
                     const button = document.createElement('a');
                     button.textContent = 'Join';
                     button.href = room.link;
@@ -110,16 +103,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     roomInfoDiv.appendChild(h3);
                     roomInfoDiv.appendChild(p);
                     roomInfoDiv.appendChild(button);
-                    console.log("room info appended");
 
                     // append img and room-info div to the main div
                     roomItemDiv.appendChild(img);
                     roomItemDiv.appendChild(roomInfoDiv);
-                    console.log("room item appended");
 
                     // append the main div to the container
                     container.appendChild(roomItemDiv);
-                    console.log("container added");
                 });
             } else {
                 container.textContent = 'No data found';
@@ -139,13 +129,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const viewProfile = document.getElementById('view-profile');
         const logout = document.getElementById('logout');
 
-        usernameSpan.textContent = currentUser;
-
-        if (currentUser !== 'guest') {
+        if (usernameSpan !== 'guest') {
+            console.log("status: user is logged in");
             loginSignup.style.display = 'none';
             viewProfile.style.display = 'inline-block';
             logout.style.display = 'inline-block';
         } else {
+            console.log("status: guest mode");
             loginSignup.style.display = 'inline-block';
             viewProfile.style.display = 'none';
             logout.style.display = 'none';
