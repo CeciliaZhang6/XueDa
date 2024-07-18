@@ -11,6 +11,10 @@ DONE:
 - fix front end UI
 
 ## 7/17
+Creating a lcoal copy of server DB to support user persistence:
+- "local storage" or cache
+- user can still browse *some* data when no connection to server
+- just save a partial copy after getting new data from server
 
 ## 7/15
 MVC Architecture for loading user profile
