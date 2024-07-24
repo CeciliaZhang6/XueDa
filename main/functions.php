@@ -122,6 +122,10 @@ function create_base_dir($conn, $uid){
 // sql is the query to get all data, used to create api
 // email is the email of target user
 function cur_user_post($conn, $email){
+    if($email === ""){
+        die("invalid email -- empty!!");
+    }
+    
     $sql = "SELECT * FROM rooms WHERE host_id = $email";
 
     $api = [];
