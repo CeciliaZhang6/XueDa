@@ -3,12 +3,14 @@
 Website home page: http://uccainc.com/csp1/index.php
 
 TODO:
-- add checking login status for create room page
+- change nav bar options based on login status
 - create room page front end design
 - blocked list
 
 DONE:
 - fix front end UI
+- update profile UI
+- add checking login status for create room page
 
 ## 7/17
 Creating a lcoal copy of server DB to support user persistence:
