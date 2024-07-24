@@ -134,7 +134,7 @@ function cur_user_post($conn, $sql, $email){
     $api_json = json_encode($api);
     echo $api_json;
 
-    $dir = "/home/uccaciyo/public_html/csp1/users/" . $email;
+    $dir = "/home/uccaciyo/public_html/csp1/users/" . $email . "/rooms";
 
     // create dir if not exist
     if (!is_dir($dir)){
@@ -145,7 +145,7 @@ function cur_user_post($conn, $sql, $email){
     echo $file_path;
 
     // check write permission
-    if (!is_writable($directory)){
+    if (!is_writable($dir)){
         die("Cannot write to dir:" . $dir);
     }
 
@@ -156,6 +156,32 @@ function cur_user_post($conn, $sql, $email){
     } else {
         echo "File written done";
     }
+}
+
+function cur_user_post_update($conn, $email){
+    $sql = "SELECT * FROM rooms WHERE host_id = $email";
+
+    $api = [];
+
+    $res = $conn->query($sql);
+
+    if ($res->num_rows > 0){
+        while($row = $res->fetch_assoc()){
+            $api[] = $row;
+        }
+    }
+
+    $user_post_api = json_encode($api);
+
+    $file_path = "/home/uccaciyo/public_html/csp1/users/" . $email . "/rooms";
+    
+    if (file_put_contents($file_path, $user_post_api) !== FALSE){
+        echo " user_post_api created!!";
+    } else {
+        die(" user_post_api failed to create...");
+    }
+    
+    $conn->close();
 }
 
 ?>
