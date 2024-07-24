@@ -22,7 +22,7 @@ $res = $conn->query($sql);
 
 if($res === TRUE){
     echo "room inserted";
-    cur_user_post($conn, $sql, $host); // host = email
+    cur_user_post($conn, $host); // host = email
 }else {
     die("room creation failed");
 }
