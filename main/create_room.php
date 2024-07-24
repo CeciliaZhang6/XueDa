@@ -22,7 +22,6 @@ $res = $conn->query($sql);
 
 if($res === TRUE){
     echo "room inserted";
-    $sql = "SELECT * FROM rooms WHERE email = '$host'";
     cur_user_post($conn, $sql, $host); // host = email
 }else {
     die("room creation failed");
