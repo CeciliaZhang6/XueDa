@@ -125,8 +125,8 @@ function cur_user_post($conn, $email){
     if($email === ""){
         die("invalid email -- empty!!");
     }
-    
-    $sql = "SELECT * FROM rooms WHERE host_id = $email";
+
+    $sql = "SELECT * FROM rooms WHERE host_id = '$email'";
 
     $api = [];
     $res = $conn->query($sql);
@@ -147,7 +147,7 @@ function cur_user_post($conn, $email){
         mkdir($dir, 0777, true); // 0777 = super user
     }
 
-    $file_path = $dir . "/cur_user_post.json";
+    $file_path = $dir . "/user_post_api.json";
     echo $file_path;
 
     // check write permission
