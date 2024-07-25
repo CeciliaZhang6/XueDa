@@ -4,13 +4,20 @@ Website home page: http://uccainc.com/csp1/index.php
 
 TODO:
 - change nav bar options based on login status
-- create room page front end design
+- fetch data in user profile page
 - blocked list
 
 DONE:
 - fix front end UI
+- create room page front end design
 - update profile UI
 - add checking login status for create room page
+
+## 7/24
+Updates: 
+- now correctly displays the session id (username) upon login/logout
+- can show all user's posts with room APIs
+- upon room creation, user_post_api is updated with all rooms this user created
 
 ## 7/17
 Creating a lcoal copy of server DB to support user persistence:
