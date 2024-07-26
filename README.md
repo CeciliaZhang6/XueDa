@@ -13,6 +13,13 @@ DONE:
 - update profile UI
 - add checking login status for create room page
 
+## 7/26
+August Plan:
+w1 => profile CRUD
+w2 => profile CRUD
+w3 => post CRUD
+w4 => wrap up
+
 ## 7/24
 Updates: 
 - now correctly displays the session id (username) upon login/logout

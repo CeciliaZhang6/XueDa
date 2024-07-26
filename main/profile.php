@@ -1,5 +1,8 @@
-<!-- profile.html (TESTING ONLY) -->
+<?php
+    include_once('dbh.php');
+    session_start();
 
+echo '
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +17,7 @@
             <ul>
                 <li><a href="http://www.uccainc.com/csp1/index.php">Home</a></li>
                 <li><a href="http://www.uccainc.com/csp1/create_room.html">Create Room</a></li>
-                <li><a href="index.php?page=logout">Logout</a></li>
+                <li><a href="http://www.uccainc.com/csp1/logout.php">Log Out</a></li>
             </ul>
         </nav>
     </header>
@@ -23,12 +26,13 @@
             <div class="profile-header">
                 <div class="profile-avatar">XD</div>
                 <h1>Username</h1>
+                <p id="cur_user" style="display:none;">'. $_SESSION["curr_user"] .'</p>
             </div>
         </section>
         <section class="profile-content">
             <div class="profile-info">
                 <h2>Account Info</h2>
-                <p><strong>Email:</strong> user@example.com</p>
+                <p><strong>Email:</strong> ' . $_SESSION["curr_user"]. '</p>
                 <p><strong>Member since:</strong> January 1, 2024</p>
                 <button class="edit-profile-btn">Edit Profile</button>
             </div>
@@ -38,12 +42,7 @@
                     <!-- fetch room items here -->
                 </div>
             </div>
-            <div class="profile-activity">
-                <h2>Recent Activity</h2>
-                <ul class="activity-list">
-                    <!-- fetch recently joined rooms here -->
-                </ul>
-            </div>
+            
         </section>
     </main>
     <footer>
@@ -52,3 +51,5 @@
     <script src="profile.js"></script>
 </body>
 </html>
+';
+?>
