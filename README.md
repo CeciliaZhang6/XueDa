@@ -4,21 +4,28 @@ Website home page: http://uccainc.com/csp1/index.php
 
 TODO:
 - change nav bar options based on login status
-- fetch data in user profile page
 - blocked list
 
-DONE:
+DONE!!:
 - fix front end UI
 - create room page front end design
 - update profile UI
 - add checking login status for create room page
+- fetch data in user profile page (for personal profile only)
 
 ## 7/26
 August Plan:
 w1 => profile CRUD
 w2 => profile CRUD
 w3 => post CRUD
-w4 => wrap up
+w4 => debug & wrap up
+w5 => debug & wrap up
+
+Updates: 
+- added posting display for user profile
+- fetching function takes in target user's email
+- FUTURE TODO: allow viewing others profile
+
 
 ## 7/24
 Updates: 

@@ -38,7 +38,7 @@ echo '
             </div>
             <div class="profile-rooms">
                 <h2>My Rooms</h2>
-                <div class="rooms-list">
+                <div class="rooms-list" id="rooms-list">
                     <!-- fetch room items here -->
                 </div>
             </div>
