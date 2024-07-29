@@ -13,6 +13,8 @@ DONE!!:
 - add checking login status for create room page
 - fetch data in user profile page (for personal profile only)
 
+## 7/29
+
 ## 7/26
 August Plan:
 w1 => profile CRUD
