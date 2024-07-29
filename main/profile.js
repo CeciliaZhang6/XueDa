@@ -2,7 +2,7 @@ var root_url = "http://www.uccainc.com/csp1/users/";
 var cur_user = document.getElementById("cur_user").innerHTML;
 var target_user =""; // the user 
 
-console.log("a=========>", cur_user)
+console.log("a=========>", cur_user);
 
 document.addEventListener('DOMContentLoaded', function() {
     loadUserInfo();

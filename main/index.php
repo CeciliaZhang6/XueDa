@@ -6,9 +6,6 @@
         $_SESSION['curr_user'] = "guest";
     }
     
-
-
-
 echo '
 <!-- index.html -->
 <!DOCTYPE html>

@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
     fetchData(url);
 
     function updateNavBar() {
-        const usernameSpan = document.getElementById('username');
+        const usernameSpan = document.getElementById('username').innerHTML;
         const loginSignup = document.getElementById('login-signup');
         const viewProfile = document.getElementById('view-profile');
         const logout = document.getElementById('logout');
