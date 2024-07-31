@@ -44,6 +44,24 @@ echo '
             </div>
             
         </section>
+                <section class="update-profile">
+            <form id="signupForm" action="http://www.uccainc.com/csp1/profile_edit.php" method="post" target="self">
+                <label>Username</label>
+                <br></br>
+                <input type="username" id="username" value="' . $_SESSION["curr_user"] . '" name="username" required>
+                <br></br>
+                <label>Bio</label>
+                <br></br>
+                <input type="bio" id="bio" value="Hello, XD!" name="bio">
+                <br></br>
+                <input type="org" id="org" value="'. $_SESSION["curr_org"]. '" name="org">
+                <br></br>
+                <input type="phone" id="phone" value="'. $_SESSION["curr_phone"] . '" name="phone">
+                <br></br>
+
+                <button type="submit">Update</button>
+            </form>
+        </section>
     </main>
     <footer>
         <p>&copy; 2024 学搭 | XueDa</p>
