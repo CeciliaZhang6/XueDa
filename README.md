@@ -3,10 +3,11 @@
 Website home page: http://uccainc.com/csp1/index.php
 
 TODO:
-- change nav bar options based on login status
+- user profile update & delete
 - blocked list
 
 DONE!!:
+- change nav bar options based on login status
 - fix front end UI
 - create room page front end design
 - update profile UI
@@ -14,6 +15,7 @@ DONE!!:
 - fetch data in user profile page (for personal profile only)
 
 ## 7/29
+Fixing user profile & nav bar.
 
 ## 7/26
 August Plan:
