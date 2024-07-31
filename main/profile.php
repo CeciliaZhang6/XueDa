@@ -46,16 +46,16 @@ echo '
         </section>
                 <section class="update-profile">
             <form id="signupForm" action="http://www.uccainc.com/csp1/profile_edit.php" method="post" target="self">
-                <label>Username</label>
-                <br></br>
+                <label>Username: </label>
                 <input type="username" id="username" value="' . $_SESSION["curr_user"] . '" name="username" required>
                 <br></br>
-                <label>Bio</label>
-                <br></br>
+                <label>Bio: </label>
                 <input type="bio" id="bio" value="Hello, XD!" name="bio">
                 <br></br>
+                label>Org: </label>
                 <input type="org" id="org" value="'. $_SESSION["curr_org"]. '" name="org">
                 <br></br>
+                label>Phone: </label>
                 <input type="phone" id="phone" value="'. $_SESSION["curr_phone"] . '" name="phone">
                 <br></br>
 
