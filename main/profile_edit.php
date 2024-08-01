@@ -9,6 +9,7 @@ $b = $_POST['bio'];
 $o = $_POST['org'];
 $p = $_POST['phone'];
 
+
 if ($u !== ""){
     $sql = "UPDATE users 
     SET user_name='$u', bio='$b', org='$o', phone='$p'

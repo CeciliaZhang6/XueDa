@@ -4,6 +4,27 @@
 include_once("dbh.php");
 session_start();
 
+function db_setup($conn){
+    $tablename = "users";
+    $sql = "CREATE TABLE $tablename 
+    (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, email VARCHAR(255) NOT NULL, pass_word VARCHAR(255) NOT NULL, 
+    user_name VARCHAR(255) NOT NULL, name VARCHAR(255) NOT NULL, sender_ip VARCHAR(255) NOT NULL, 
+    org VARCHAR(255) NOT NULL, user_long VARCHAR(255) NOT NULL, user_lat VARCHAR(255) NOT NULL, 
+    creation_date VARCHAR(255) NOT NULL, allow_loc VARCHAR(2) NOT NULL, phone VARCHAR(30) NOT NULL, 
+    pfp TEXT NOT NULL, is_public VARCHAR(2) NOT NULL)";
+
+    $tablename = "rooms";
+    $sql = "CREATE TABLE $tablename 
+    (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255) NOT NULL, subject VARCHAR(255) NOT NULL, 
+    description VARCHAR(255) NOT NULL, date VARCHAR(20) NOT NULL, link VARCHAR(255), 
+    host_id VARCHAR(255), sender_ip VARCHAR(255), scheduled_date VARCHAR(255))";
+
+    $tablename = "tokens";
+    $sql = "CREATE TABLE $tablename 
+    (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, is_valid VARCHAR(2), sender_ip VARCHAR(255), visit_date VARCHAR(255))";
+
+}
+
 function login($conn, $given_email, $given_password){
     $sql = "SELECT * FROM users";
 

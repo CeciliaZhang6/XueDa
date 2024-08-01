@@ -3,7 +3,7 @@
 Website home page: http://uccainc.com/csp1/index.php
 
 TODO:
-- user profile update front end
+- user profile update front end: 1. add button to display update form 2. form styling
 - user profile delete
 - blocked list
 
