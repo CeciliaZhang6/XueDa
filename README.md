@@ -3,16 +3,23 @@
 Website home page: http://uccainc.com/csp1/index.php
 
 TODO:
-- user profile update & delete
+- user profile update front end
+- user profile delete
 - blocked list
 
 DONE!!:
+- user profile edit/update backend done
 - change nav bar options based on login status
 - fix front end UI
 - create room page front end design
 - update profile UI
 - add checking login status for create room page
 - fetch data in user profile page (for personal profile only)
+
+## 7/31
+Added a form so the user can update username (required), bio, org, and phone. 
+Planning to rework DB design so all columns are not null. 
+Planning to make the update form hidden and only show when edit button is clicked. 
 
 ## 7/29
 Fixing user profile & nav bar.
