@@ -7,6 +7,10 @@ TODO:
 - user profile delete
 - blocked list
 
+DEBUG LIST:
+- when first time opening up webpage, all rooms cannot be rendered
+- home page banner control (dots on bottom) not precise
+
 DONE!!:
 - user profile edit/update backend done
 - change nav bar options based on login status
