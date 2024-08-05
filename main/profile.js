@@ -5,7 +5,6 @@ var target_user =""; // the user
 console.log("a=========>", cur_user);
 
 document.addEventListener('DOMContentLoaded', function() {
-    loadUserInfo();
     loadUserRooms(cur_user);
 
     const editProfileBtn = document.querySelector('.edit-profile-btn');
@@ -21,27 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
         updateProfileForm.style.display = 'none';
     });
 
-    updateForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const username = document.getElementById('username').value;
-        const bio = document.getElementById('bio').value;
-
-        // Update the displayed info
-        document.getElementById('display-username').textContent = username;
-        document.getElementById('display-bio').textContent = bio;
-
-        // Hide the form
-        updateProfileForm.style.display = 'none';
-    });
 });
 
-function loadUserInfo() {
-    // TODO: fetch user info
-    console.log('Loading user info...');
-}
-
 function loadUserRooms(email) {
-    // TODO: fetch user's rooms
     console.log('Loading user rooms...');
     var url = root_url.concat(email, "/rooms/user_post_api.json");
     console.log(url);
@@ -104,6 +85,7 @@ function loadUserRooms(email) {
         
     })
 }
+
 
 // function loadRecentActivity() {
 //     // TODO: fetch recent activity

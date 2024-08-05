@@ -19,6 +19,9 @@ if ($u !== ""){
 
     if ($res === TRUE){
         echo "info updated!!";
+        $_SESSION["curr_user_name"] = $u;
+        $_SESSION["curr_user_bio"] = $b;
+        header("Location: profile.php");
     }else{
         echo "update failed...";
     }
