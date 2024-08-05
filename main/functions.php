@@ -11,7 +11,13 @@ function db_setup($conn){
     user_name VARCHAR(255) NOT NULL, name VARCHAR(255) NOT NULL, sender_ip VARCHAR(255) NOT NULL, 
     org VARCHAR(255) NOT NULL, user_long VARCHAR(255) NOT NULL, user_lat VARCHAR(255) NOT NULL, 
     creation_date VARCHAR(255) NOT NULL, allow_loc VARCHAR(2) NOT NULL, phone VARCHAR(30) NOT NULL, 
-    pfp TEXT NOT NULL, is_public VARCHAR(2) NOT NULL)";
+    pfp TEXT NOT NULL, bio TEXT NOT NULL, is_public VARCHAR(2) NOT NULL)";
+
+    if ($conn->query($sql)){
+        echo "Table created";
+    } else {
+        echo "Table exists, or bad";
+    }
 
     $tablename = "rooms";
     $sql = "CREATE TABLE $tablename 
@@ -19,9 +25,21 @@ function db_setup($conn){
     description VARCHAR(255) NOT NULL, date VARCHAR(20) NOT NULL, link VARCHAR(255), 
     host_id VARCHAR(255), sender_ip VARCHAR(255), scheduled_date VARCHAR(255))";
 
+    if ($conn->query($sql)){
+        echo "Table created";
+    } else {
+        echo "Table exists, or bad";
+    }
+
     $tablename = "tokens";
     $sql = "CREATE TABLE $tablename 
     (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, is_valid VARCHAR(2), sender_ip VARCHAR(255), visit_date VARCHAR(255))";
+
+    if ($conn->query($sql)){
+        echo "Table created";
+    } else {
+        echo "Table exists, or bad";
+    }
 
 }
 
