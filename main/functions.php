@@ -22,8 +22,8 @@ function db_setup($conn){
     $tablename = "rooms";
     $sql = "CREATE TABLE $tablename 
     (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255) NOT NULL, subject VARCHAR(255) NOT NULL, 
-    description VARCHAR(255) NOT NULL, date VARCHAR(20) NOT NULL, link VARCHAR(255), 
-    host_id VARCHAR(255), sender_ip VARCHAR(255), scheduled_date VARCHAR(255))";
+    description VARCHAR(255) NOT NULL, date VARCHAR(20) NOT NULL, link VARCHAR(255) NOT NULL, 
+    host_id VARCHAR(255) NOT NULL, sender_ip VARCHAR(255) NOT NULL, scheduled_date VARCHAR(255) NOT NULL)";
 
     if ($conn->query($sql)){
         echo "Table created";
@@ -33,7 +33,7 @@ function db_setup($conn){
 
     $tablename = "tokens";
     $sql = "CREATE TABLE $tablename 
-    (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, is_valid VARCHAR(2), sender_ip VARCHAR(255), visit_date VARCHAR(255))";
+    (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, is_valid VARCHAR(2) NOT NULL, sender_ip VARCHAR(255) NOT NULL, visit_date VARCHAR(255) NOT NULL)";
 
     if ($conn->query($sql)){
         echo "Table created";
