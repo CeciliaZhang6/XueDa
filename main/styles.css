@@ -432,6 +432,64 @@ footer {
     border-bottom: 1px solid #eee;
 }
 
+.update-profile {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.update-profile h2 {
+    margin-bottom: 20px;
+}
+
+.update-profile form {
+    display: flex;
+    flex-direction: column;
+}
+
+.update-profile label {
+    margin-bottom: 5px;
+}
+
+.update-profile input,
+.update-profile textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.update-profile textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.update-profile button {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.update-profile button:hover {
+    background-color: #555;
+}
+
+.update-profile .cancel-btn {
+    background-color: #ccc;
+    color: #333;
+    margin-left: 10px;
+}
+
+.update-profile .cancel-btn:hover {
+    background-color: #bbb;
+}
+
 @media (max-width: 768px) {
     .profile-content {
         grid-template-columns: 1fr;

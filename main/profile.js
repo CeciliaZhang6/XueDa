@@ -7,6 +7,32 @@ console.log("a=========>", cur_user);
 document.addEventListener('DOMContentLoaded', function() {
     loadUserInfo();
     loadUserRooms(cur_user);
+
+    const editProfileBtn = document.querySelector('.edit-profile-btn');
+    const updateProfileForm = document.querySelector('.update-profile');
+    const cancelBtn = document.querySelector('.cancel-btn');
+    const updateForm = document.getElementById('update-form');
+
+    editProfileBtn.addEventListener('click', function() {
+        updateProfileForm.style.display = 'block';
+    });
+
+    cancelBtn.addEventListener('click', function() {
+        updateProfileForm.style.display = 'none';
+    });
+
+    updateForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const bio = document.getElementById('bio').value;
+
+        // Update the displayed info
+        document.getElementById('display-username').textContent = username;
+        document.getElementById('display-bio').textContent = bio;
+
+        // Hide the form
+        updateProfileForm.style.display = 'none';
+    });
 });
 
 function loadUserInfo() {
@@ -83,8 +109,3 @@ function loadUserRooms(email) {
 //     // TODO: fetch recent activity
 //     console.log('Loading recent activity...');
 // }
-
-document.querySelector('.edit-profile-btn').addEventListener('click', function() {
-    // TODO: edit profile
-    console.log('Editing profile...');
-});

@@ -32,10 +32,27 @@ echo '
         <section class="profile-content">
             <div class="profile-info">
                 <h2>Account Info</h2>
-                <p><strong>Email:</strong> ' . $_SESSION["curr_user"]. '</p>
+                <p><strong>Email:</strong> ' . $_SESSION["curr_user"] . '</p>
                 <p><strong>Member since:</strong> January 1, 2024</p>
+                <p><strong>Username:</strong> <span id="display-username"></span></p>
+                <p><strong>Bio:</strong> <span id="display-bio"></span></p>
                 <button class="edit-profile-btn">Edit Profile</button>
             </div>
+
+            <div class="update-profile" style="display: none;">
+                <h2>Update Profile</h2>
+                <form id="update-form" action="http://www.uccainc.com/csp1/profile_edit.php" method="post">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" value="'.$_SESSION["curr_user_name"].'">
+                    
+                    <label for="bio">Bio:</label>
+                    <textarea id="bio" name="bio" value="'.$_SESSION["curr_user_bio"].'"></textarea>
+                    
+                    <button type="submit">Update</button>
+                    <button type="button" class="cancel-btn">Cancel</button>
+                </form>
+            </div>
+
             <div class="profile-rooms">
                 <h2>My Rooms</h2>
                 <div class="rooms-list" id="rooms-list">
@@ -44,24 +61,7 @@ echo '
             </div>
             
         </section>
-                <section class="update-profile">
-            <form id="signupForm" action="http://www.uccainc.com/csp1/profile_edit.php" method="post" target="self">
-                <label>Username: </label>
-                <input type="username" id="username" value="' . $_SESSION["curr_user"] . '" name="username" required>
-                <br></br>
-                <label>Bio: </label>
-                <input type="bio" id="bio" value="Hello, XD!" name="bio">
-                <br></br>
-                label>Org: </label>
-                <input type="org" id="org" value="'. $_SESSION["curr_org"]. '" name="org">
-                <br></br>
-                label>Phone: </label>
-                <input type="phone" id="phone" value="'. $_SESSION["curr_phone"] . '" name="phone">
-                <br></br>
-
-                <button type="submit">Update</button>
-            </form>
-        </section>
+        
     </main>
     <footer>
         <p>&copy; 2024 学搭 | XueDa</p>
