@@ -34,8 +34,8 @@ echo '
                 <h2>Account Info</h2>
                 <p><strong>Email:</strong> ' . $_SESSION["curr_user"] . '</p>
                 <p><strong>Member since:</strong> January 1, 2024</p>
-                <p><strong>Username:</strong> <span id="display-username"></span></p>
-                <p><strong>Bio:</strong> <span id="display-bio"></span></p>
+                <p><strong>Username:</strong> <span id="display-username"> ' . $_SESSION["curr_user_name"] . '</span></p>
+                <p><strong>Bio:</strong> <span id="display-bio">' . $_SESSION["curr_user_bio"] . '</span></p>
                 <button class="edit-profile-btn">Edit Profile</button>
             </div>
 
