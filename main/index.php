@@ -65,4 +65,6 @@ echo '
 </body>
 </html>
 ';
+
+$conn->close();
 ?>

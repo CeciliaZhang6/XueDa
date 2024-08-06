@@ -21,6 +21,7 @@ if ($u !== ""){
         echo "info updated!!";
         $_SESSION["curr_user_name"] = $u;
         $_SESSION["curr_user_bio"] = $b;
+        $conn->close();
         header("Location: profile.php");
     }else{
         echo "update failed...";
@@ -28,5 +29,7 @@ if ($u !== ""){
 }else{
     die("empty username!!!");
 }
+
+$conn->close();
 
 ?>

@@ -17,4 +17,5 @@ if ($res->num_rows > 0){
 $jsonAPI = json_encode($api);
 echo $jsonAPI;
 
+$conn->close();
 ?>

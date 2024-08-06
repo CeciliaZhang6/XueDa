@@ -22,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($login_status === 1) {
         $_SESSION["login_status"] = TRUE;
         $_SESSION["curr_user"] = $email;
+        $conn->close();
         // Redirect to home page or dashboard after successful login
         header("Location: index.php");
         exit();
@@ -30,9 +31,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif ($login_status === -1){
         $message = "Email not found. Please sign up first.";
     } else {
-
+        $message = "Other error";
     }
 }
+
+$conn->close();
+
 ?>
 
 <!-- TODO:  use echo to convert html to php -->

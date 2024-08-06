@@ -41,6 +41,8 @@ function db_setup($conn){
         echo "Table exists, or bad";
     }
 
+    $conn->close();
+
 }
 
 function login($conn, $given_email, $given_password){
@@ -93,6 +95,7 @@ function user_res_auth($conn, $given_email){
         
     }
 
+    $conn->close();
 }
 
 function create_base_dir($conn, $uid){
@@ -158,6 +161,8 @@ function create_base_dir($conn, $uid){
     //     echo(" Blocked Dir created. ");
     // }
 
+    $conn->close();
+
 }
 
 // sql is the query to get all data, used to create api
@@ -206,31 +211,5 @@ function cur_user_post($conn, $email){
 
     $conn->close();
 }
-
-// function cur_user_post_update($conn, $email){
-//     $sql = "SELECT * FROM rooms WHERE host_id = $email";
-
-//     $api = [];
-
-//     $res = $conn->query($sql);
-
-//     if ($res->num_rows > 0){
-//         while($row = $res->fetch_assoc()){
-//             $api[] = $row;
-//         }
-//     }
-
-//     $user_post_api = json_encode($api);
-
-//     $file_path = "/home/uccaciyo/public_html/csp1/users/" . $email . "/rooms";
-    
-//     if (file_put_contents($file_path, $user_post_api) !== FALSE){
-//         echo " user_post_api created!!";
-//     } else {
-//         die(" user_post_api failed to create...");
-//     }
-    
-//     $conn->close();
-// }
 
 ?>

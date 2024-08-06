@@ -23,9 +23,12 @@ $res = $conn->query($sql);
 if($res === TRUE){
     echo "room inserted";
     cur_user_post($conn, $host); // host = email
+    $conn->close();
     header("Location: profile.php");
 }else {
     die("room creation failed");
 }
+
+$conn->close();
 
 ?>

@@ -22,6 +22,7 @@ if (isset($_POST['email']) && isset($_POST['password'])){
         $_SESSION["login_status"] = TRUE;
         $_SESSION["curr_user"] = $email;
         
+        $conn->close();
         header("Location: index.php");
     }else{
       die("not good (insert user table)");
@@ -31,5 +32,5 @@ if (isset($_POST['email']) && isset($_POST['password'])){
     die("ERROR: empty email or password");
 }
 
-
+$conn->close();
 ?>
