@@ -46,7 +46,7 @@ echo '
                     <input type="text" id="username" name="username" value="'.$_SESSION["curr_user_name"].'">
                     
                     <label for="bio">Bio:</label>
-                    <textarea id="bio" name="bio" value="'.$_SESSION["curr_user_bio"].'"></textarea>
+                    <textarea id="bio" name="bio" value="'.$_SESSION["curr_user_bio"].'">'.$_SESSION["curr_user_bio"].'</textarea>
                     
                     <button type="submit">Update</button>
                     <button type="button" class="cancel-btn">Cancel</button>
