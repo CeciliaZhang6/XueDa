@@ -55,6 +55,8 @@ function login($conn, $given_email, $given_password){
 
             if($email === $given_email){
                 if($password === $given_password){
+                    $_SESSION["curr_user_name"] = $row['user_name'];
+                    $_SESSION["curr_user_bio"] = $row['bio'];
                     $_SESSION['curr_user'] = $email;
                     $_SESSION["login_status"] = TRUE;
                     return 1; // login success
