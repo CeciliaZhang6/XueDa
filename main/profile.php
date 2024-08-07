@@ -32,7 +32,7 @@ echo '
         <section class="profile-content">
             <div class="profile-info">
                 <h2>Account Info</h2>
-                <div class="account-info-display">
+                <div class="account-info-display" id="account-info-display">
                     <p><strong>Email:</strong> ' . $_SESSION["curr_user"] . '</p>
                     <p><strong>Member since:</strong> '. $_SESSION["member_since"] . '</p>
                     <p><strong>Username:</strong> <span id="display-username"> ' . $_SESSION["curr_user_name"] . '</span></p>
@@ -40,7 +40,7 @@ echo '
                     <button class="edit-profile-btn">Edit Profile</button>
                 </div>
             
-                <div class="account-info-edit" style="display: none;">
+                <div class="account-info-edit" id="account-info-edit" style="display: none;">
                     <form class="update-form" action="http://www.uccainc.com/csp1/profile_edit.php" method="post">
                         <p><strong>Email:</strong> ' . $_SESSION["curr_user"] . '</p>
                         <p><strong>Member since:</strong> '.$_SESSION["member_since"].' </p>

@@ -27,7 +27,6 @@ foreach($array_data as $item) {
 
 }
 
-
 if($res->num_rows > 0){
     while($row = $res->fetch_assoc()){
         $email = $row['email'];
