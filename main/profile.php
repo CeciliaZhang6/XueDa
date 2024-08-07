@@ -44,12 +44,8 @@ echo '
                     <form class="update-form" action="http://www.uccainc.com/csp1/profile_edit.php" method="post">
                         <p><strong>Email:</strong> ' . $_SESSION["curr_user"] . '</p>
                         <p><strong>Member since:</strong> '.$_SESSION["member_since"].' </p>
-
-                        <label for="username">Username:</label>
-                        <input type="text" id="username" name="username" value="'.$_SESSION["curr_user_name"].'">
-                        <br></br>
-                        <label for="bio">Bio:</label>
-                        <textarea id="bio" name="bio">'.$_SESSION["curr_user_bio"].'</textarea>
+                        <p><strong>Username:</strong> <input type="text" id="username" name="username" value="'.$_SESSION["curr_user_name"].'"> </p>
+                        <p><strong>Bio:</strong> <textarea id="bio" name="bio">'.$_SESSION["curr_user_bio"].'</textarea> </p>
                         
                         <div class="button-group">
                             <button type="submit" class="update-btn">Update</button>
@@ -60,7 +56,10 @@ echo '
             </div>
 
             <div class="profile-rooms">
-                <h2>My Rooms</h2>
+                <div class="rooms-header">
+                    <h2>My Rooms</h2>
+                    <button class="edit-rooms-btn">Edit</button>
+                </div>
                 <div class="rooms-list" id="rooms-list">
                     <!-- fetch room items here -->
                 </div>

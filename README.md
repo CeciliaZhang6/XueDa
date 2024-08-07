@@ -9,7 +9,6 @@ TODO:
 - blocked list
 
 DEBUG LIST:
-- when first time opening up webpage, all rooms cannot be rendered
 - home page banner control (dots on bottom) not precise
 
 DONE!!:
@@ -22,6 +21,7 @@ DONE!!:
 - update profile UI
 - add checking login status for create room page
 - fetch data in user profile page (for personal profile only)
+- when first time opening up webpage, all rooms cannot be rendered
 
 ## 8/7
 

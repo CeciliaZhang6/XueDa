@@ -28,14 +28,14 @@
         <section class="profile-content">
             <div class="profile-info">
                 <h2>Account Info</h2>
-                <div id="account-info-display">
+                <div id="account-info-display" style="display: none;">
                     <p><strong>Email:</strong> test user</p>
                     <p><strong>Member since:</strong> January 1, 2024</p>
                     <p><strong>Username:</strong> <span id="display-username">usernameee</span></p>
                     <p><strong>Bio:</strong> <span id="display-bio">bioooo</span></p>
                     <button class="edit-profile-btn">Edit Profile</button>
                 </div>
-                <div id="account-info-edit" style="display: none;">
+                <div id="account-info-edit" style="display: block;">
                     <form id="update-form" action="http://www.uccainc.com/csp1/profile_edit.php" method="post">
                         <label>Email:</label>
                         <input type="text" id="email" value="your original email" readonly>
