@@ -399,11 +399,6 @@ footer {
     grid-row: 1 / 2;
 }
 
-.profile-activity {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-}
-
 .edit-profile-btn {
     display: block;
     width: 100%;
@@ -421,53 +416,75 @@ footer {
     background-color: #555;
 }
 
-.rooms-list, .activity-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.activity-list li {
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
-}
-
-.update-profile {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+#account-info-edit {
     margin-top: 20px;
 }
 
-.update-profile h2 {
-    margin-bottom: 20px;
-}
-
-.update-profile form {
+#account-info-edit form {
     display: flex;
     flex-direction: column;
 }
 
-.update-profile label {
+#account-info-edit label {
+    margin-top: 10px;
     margin-bottom: 5px;
 }
 
-.update-profile input,
-.update-profile textarea {
-    margin-bottom: 15px;
-    padding: 10px;
+#account-info-edit input,
+#account-info-edit textarea {
+    padding: 8px;
     border: 1px solid #ddd;
     border-radius: 3px;
+    margin-bottom: 10px;
 }
 
-.update-profile textarea {
+#account-info-edit textarea {
     height: 100px;
     resize: vertical;
 }
 
-.update-profile button {
-    padding: 10px;
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.button-group button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.update-btn {
+    background-color: #333;
+    color: #fff;
+}
+
+.update-btn:hover {
+    background-color: #555;
+}
+
+.cancel-btn {
+    background-color: #ccc;
+    color: #333;
+}
+
+.cancel-btn:hover {
+    background-color: #bbb;
+}
+
+/* Styles for the My Rooms section header */
+.rooms-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.edit-rooms-btn {
+    padding: 5px 10px;
     background-color: #333;
     color: #fff;
     border: none;
@@ -476,18 +493,8 @@ footer {
     transition: background-color 0.3s ease;
 }
 
-.update-profile button:hover {
+.edit-rooms-btn:hover {
     background-color: #555;
-}
-
-.update-profile .cancel-btn {
-    background-color: #ccc;
-    color: #333;
-    margin-left: 10px;
-}
-
-.update-profile .cancel-btn:hover {
-    background-color: #bbb;
 }
 
 @media (max-width: 768px) {
@@ -495,7 +502,7 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .profile-info, .profile-rooms, .profile-activity {
+    .profile-info, .profile-rooms {
         grid-column: 1 / 2;
         grid-row: auto;
     }

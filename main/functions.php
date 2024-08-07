@@ -61,8 +61,8 @@ function login($conn, $given_email, $given_password){
                     $_SESSION["curr_user_bio"] = $row['bio'];
                     $_SESSION['curr_user'] = $email;
                     $_SESSION["login_status"] = TRUE;
+                    $_SESSION["member_since"] = $row['creation_date'];
                     return 1; // login success
-                    // header("Location: index.php");
 
                 } else {
                     echo("bad password");

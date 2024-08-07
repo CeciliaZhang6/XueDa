@@ -32,25 +32,31 @@ echo '
         <section class="profile-content">
             <div class="profile-info">
                 <h2>Account Info</h2>
-                <p><strong>Email:</strong> ' . $_SESSION["curr_user"] . '</p>
-                <p><strong>Member since:</strong> January 1, 2024</p>
-                <p><strong>Username:</strong> <span id="display-username"> ' . $_SESSION["curr_user_name"] . '</span></p>
-                <p><strong>Bio:</strong> <span id="display-bio">' . $_SESSION["curr_user_bio"] . '</span></p>
-                <button class="edit-profile-btn">Edit Profile</button>
-            </div>
+                <div id="account-info-display">
+                    <p><strong>Email:</strong> ' . $_SESSION["curr_user"] . '</p>
+                    <p><strong>Member since:</strong> '. $_SESSION["member_since"] . '</p>
+                    <p><strong>Username:</strong> <span id="display-username"> ' . $_SESSION["curr_user_name"] . '</span></p>
+                    <p><strong>Bio:</strong> <span id="display-bio">' . $_SESSION["curr_user_bio"] . '</span></p>
+                    <button class="edit-profile-btn">Edit Profile</button>
+                </div>
+            
+                <div id="account-info-edit" style="display: none;">
+                    <form id="update-form" action="http://www.uccainc.com/csp1/profile_edit.php" method="post">
+                        <p><strong>Email:</strong> ' . $_SESSION["curr_user"] . '</p>
+                        <p><strong>Member since:</strong> '.$_SESSION["member_since"].' </p>
 
-            <div class="update-profile" style="display: none;">
-                <h2>Update Profile</h2>
-                <form id="update-form" action="http://www.uccainc.com/csp1/profile_edit.php" method="post">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" value="'.$_SESSION["curr_user_name"].'">
-                    
-                    <label for="bio">Bio:</label>
-                    <textarea id="bio" name="bio" value="'.$_SESSION["curr_user_bio"].'">'.$_SESSION["curr_user_bio"].'</textarea>
-                    
-                    <button type="submit">Update</button>
-                    <button type="button" class="cancel-btn">Cancel</button>
-                </form>
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" value="'.$_SESSION["curr_user_name"].'">
+                        
+                        <label for="bio">Bio:</label>
+                        <textarea id="bio" name="bio">'.$_SESSION["curr_user_bio"].'</textarea>
+                        
+                        <div class="button-group">
+                            <button type="submit" class="update-btn">Update</button>
+                            <button type="button" class="cancel-btn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
             </div>
 
             <div class="profile-rooms">

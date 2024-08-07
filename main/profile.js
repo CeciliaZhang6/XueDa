@@ -8,16 +8,19 @@ document.addEventListener('DOMContentLoaded', function() {
     loadUserRooms(cur_user);
 
     const editProfileBtn = document.querySelector('.edit-profile-btn');
-    const updateProfileForm = document.querySelector('.update-profile');
+    const accountInfoDisplay = document.getElementById('account-info-display');
+    const accountInfoEdit = document.getElementById('account-info-edit');
     const cancelBtn = document.querySelector('.cancel-btn');
     const updateForm = document.getElementById('update-form');
 
     editProfileBtn.addEventListener('click', function() {
-        updateProfileForm.style.display = 'block';
+        accountInfoDisplay.style.display = 'none';
+        accountInfoEdit.style.display = 'block';
     });
 
     cancelBtn.addEventListener('click', function() {
-        updateProfileForm.style.display = 'none';
+        accountInfoDisplay.style.display = 'block';
+        accountInfoEdit.style.display = 'none';
     });
 
 });

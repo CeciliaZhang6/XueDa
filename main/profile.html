@@ -28,38 +28,42 @@
         <section class="profile-content">
             <div class="profile-info">
                 <h2>Account Info</h2>
-                <p><strong>Email:</strong> display@email.com</p>
-                <p><strong>Member since:</strong> January 1, 2024</p>
-                <p><strong>Username:</strong> <span id="display-username"></span></p>
-                <p><strong>Bio:</strong> <span id="display-bio"></span></p>
-                <button class="edit-profile-btn">Edit Profile</button>
-            </div>
-            
-            <div class="update-profile" style="display: none;">
-                <h2>Update Profile</h2>
-                <form id="update-form" action="http://www.uccainc.com/csp1/profile_edit.php" method="post">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" value="">
-                    
-                    <label for="bio">Bio:</label>
-                    <textarea id="bio" name="bio"></textarea>
-                    
-                    <button type="submit">Update</button>
-                    <button type="button" class="cancel-btn">Cancel</button>
-                </form>
-            </div>
-            <div class="profile-rooms">
-                <h2>My Rooms</h2>
-                <div class="rooms-list">
-                    <!-- fetch room items here -->
+                <div id="account-info-display">
+                    <p><strong>Email:</strong> test user</p>
+                    <p><strong>Member since:</strong> January 1, 2024</p>
+                    <p><strong>Username:</strong> <span id="display-username">usernameee</span></p>
+                    <p><strong>Bio:</strong> <span id="display-bio">bioooo</span></p>
+                    <button class="edit-profile-btn">Edit Profile</button>
+                </div>
+                <div id="account-info-edit" style="display: none;">
+                    <form id="update-form" action="http://www.uccainc.com/csp1/profile_edit.php" method="post">
+                        <label>Email:</label>
+                        <input type="text" id="email" value="your original email" readonly>
+                        <p><strong>Member since:</strong> January 1, 2024</p>
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" value="username">
+                        
+                        <label for="bio">Bio:</label>
+                        <textarea id="bio" name="bio">current biooo</textarea>
+                        
+                        <div class="button-group">
+                            <button type="submit" class="update-btn">Update</button>
+                            <button type="button" class="cancel-btn">Cancel</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <div class="profile-activity">
-                <h2>Recent Activity</h2>
-                <ul class="activity-list">
-                    <!-- fetch recently joined rooms here -->
-                </ul>
+            
+            <div class="profile-rooms">
+                <div class="rooms-header">
+                    <h2>My Rooms</h2>
+                    <button class="edit-rooms-btn">Edit</button>
+                </div>
+                <div class="rooms-list" id="rooms-list">
+                    <!-- Room items will be populated here -->
+                </div>
             </div>
+            
         </section>
         
     </main>

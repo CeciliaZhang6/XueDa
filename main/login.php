@@ -20,17 +20,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $login_status = login($conn, $email, $password);
 
     if ($login_status === 1) {
-        $_SESSION["login_status"] = TRUE;
-        $_SESSION["curr_user"] = $email;
+        
         $conn->close();
         // Redirect to home page or dashboard after successful login
         header("Location: index.php");
         exit();
     } elseif ($login_status === 0) {
+        $_SESSION["login_status"] = FALSE;
+        $_SESSION["curr_user"] = "guest";
         $message = "Incorrect password. Please try again.";
     } elseif ($login_status === -1){
+        $_SESSION["login_status"] = FALSE;
+        $_SESSION["curr_user"] = "guest";
         $message = "Email not found. Please sign up first.";
     } else {
+        $_SESSION["login_status"] = FALSE;
+        $_SESSION["curr_user"] = "guest";
         $message = "Other error";
     }
 }
