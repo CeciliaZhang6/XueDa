@@ -24,10 +24,18 @@ DONE!!:
 - when first time opening up webpage, all rooms cannot be rendered
 
 ## 8/7
+Adding user post delete function and wrapper php. 
+
+Implement plan: 
+1. add room id when fetching
+2. add delete button when in editing mode for rooms
+3. create a hidden form containing user email and chosen room id (use dom in js to keep track of room id)
+4. create a yes/no form for user to confirm deletion
+5. call delete_post().
 
 ## 8/5
-Now profile displays username and bio with support for update these two fields. 
-
+Now profile displays username and bio with support for update these two fields when edit button is clicked. 
+Fixing UI and styling.
 
 ## 7/31
 Added a form so the user can update username (required), bio, org, and phone. 

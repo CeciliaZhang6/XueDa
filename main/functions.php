@@ -212,4 +212,17 @@ function cur_user_post($conn, $email){
     $conn->close();
 }
 
+function delete_post($conn, $id, $email){
+    $sql = "DELETE FROM rooms WHERE id = '$id' AND host_id = '$email'";
+    $res = $conn->query($sql);
+    
+    if ($res === TRUE){
+        echo "delete done";
+    } else {
+        echo "delete failed!!";
+    }
+
+    $conn->close();
+}
+
 ?>
