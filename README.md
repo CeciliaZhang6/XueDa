@@ -23,6 +23,12 @@ DONE!!:
 - add checking login status for create room page
 - fetch data in user profile page (for personal profile only)
 
+## 8/7
+
+## 8/5
+Now profile displays username and bio with support for update these two fields. 
+
+
 ## 7/31
 Added a form so the user can update username (required), bio, org, and phone. 
 Planning to rework DB design so all columns are not null. 

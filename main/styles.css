@@ -416,29 +416,29 @@ footer {
     background-color: #555;
 }
 
-#account-info-edit {
+.account-info-edit {
     margin-top: 20px;
 }
 
-#account-info-edit form {
+.account-info-edit form {
     display: flex;
     flex-direction: column;
 }
 
-#account-info-edit label {
+.account-info-edit label {
     margin-top: 10px;
     margin-bottom: 5px;
 }
 
-#account-info-edit input,
-#account-info-edit textarea {
+.account-info-edit input,
+.account-info-edit textarea {
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 3px;
     margin-bottom: 10px;
 }
 
-#account-info-edit textarea {
+.account-info-edit textarea {
     height: 100px;
     resize: vertical;
 }
