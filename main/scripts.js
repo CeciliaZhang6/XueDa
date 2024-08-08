@@ -99,6 +99,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     button.href = room.link;
                     button.classList.add('button');
 
+                    const roomId = document.createElement('p');
+                    roomId.textContent = room.id;
+                    roomId.style.display = 'none';
+                    roomId.id = "room_id";
+
                     // append h3, p, and button to room-info div
                     roomInfoDiv.appendChild(h3);
                     roomInfoDiv.appendChild(p);
@@ -107,6 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     // append img and room-info div to the main div
                     roomItemDiv.appendChild(img);
                     roomItemDiv.appendChild(roomInfoDiv);
+                    roomItemDiv.appendChild(roomId); // hidden id
 
                     // append the main div to the container
                     container.appendChild(roomItemDiv);
@@ -115,7 +121,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 container.textContent = 'No data found';
             }
             
-
         })
     }
 
