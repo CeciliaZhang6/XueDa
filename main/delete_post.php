@@ -8,6 +8,9 @@ $email = $_SESSION['curr_user'];
 
 delete_post($conn, $room_id, $email);
 
-create_base_dir($conn, $email);
+cur_user_post($conn, $email);
+
+header("Location: profile.php");
+
 
 ?>

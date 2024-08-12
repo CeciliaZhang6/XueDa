@@ -1,6 +1,6 @@
 var root_url = "http://www.uccainc.com/csp1/users/";
 var cur_user = document.getElementById("cur_user").innerHTML;
-var target_user =""; // the user 
+var target_user =""; // the user (TODO: allow viewing other user's profile)
 
 console.log("a=========>", cur_user);
 

@@ -98,6 +98,7 @@ function user_res_auth($conn, $given_email){
     $conn->close();
 }
 
+// sets up directory
 function create_base_dir($conn, $uid){
     $base_dir = "users";
     $sub_dir_1 = "rooms";
@@ -167,6 +168,7 @@ function create_base_dir($conn, $uid){
 
 // sql is the query to get all data, used to create api
 // email is the email of target user
+// creates or updates user api
 function cur_user_post($conn, $email){
     if($email === ""){
         die("invalid email -- empty!!");
