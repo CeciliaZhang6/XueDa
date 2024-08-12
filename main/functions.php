@@ -6,44 +6,75 @@ session_start();
 
 function db_setup($conn){
     $tablename = "users";
-    $sql = "CREATE TABLE $tablename 
-    (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, email VARCHAR(255) NOT NULL, pass_word VARCHAR(255) NOT NULL, 
-    user_name VARCHAR(255) NOT NULL, name VARCHAR(255) NOT NULL, sender_ip VARCHAR(255) NOT NULL, 
-    org VARCHAR(255) NOT NULL, user_long VARCHAR(255) NOT NULL, user_lat VARCHAR(255) NOT NULL, 
-    creation_date VARCHAR(255) NOT NULL, allow_loc VARCHAR(2) NOT NULL, phone VARCHAR(30) NOT NULL, 
-    pfp TEXT NOT NULL, bio TEXT NOT NULL, is_public VARCHAR(2) NOT NULL)";
+    $sql = "DROP TABLE IF EXISTS $tablename";
+    $conn->query($sql);
+
+    $sql = "CREATE TABLE $tablename (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    pass_word VARCHAR(255) NOT NULL,
+    user_name VARCHAR(255) NOT NULL DEFAULT 'Anonymous',
+    name VARCHAR(255) NOT NULL DEFAULT 'Unknown',
+    sender_ip VARCHAR(255) NOT NULL DEFAULT '0.0.0.0',
+    org VARCHAR(255) NOT NULL DEFAULT 'None',
+    user_long VARCHAR(255) NOT NULL DEFAULT '0',
+    user_lat VARCHAR(255) NOT NULL DEFAULT '0',
+    creation_date VARCHAR(255) NOT NULL,
+    allow_loc VARCHAR(2) NOT NULL DEFAULT 'N',
+    phone VARCHAR(30) NOT NULL DEFAULT '0000000000',
+    pfp TEXT NOT NULL DEFAULT 'default.png',
+    bio TEXT NOT NULL DEFAULT 'No bio available',
+    is_public VARCHAR(2) NOT NULL DEFAULT 'N'
+    )";
 
     if ($conn->query($sql)){
-        echo "Table created";
+        echo "Users table created\n";
     } else {
-        echo "Table exists, or bad";
+        echo "Users table exists, or bad\n";
     }
 
     $tablename = "rooms";
-    $sql = "CREATE TABLE $tablename 
-    (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255) NOT NULL, subject VARCHAR(255) NOT NULL, 
-    description VARCHAR(255) NOT NULL, date VARCHAR(20) NOT NULL, link VARCHAR(255) NOT NULL, 
-    host_id VARCHAR(255) NOT NULL, sender_ip VARCHAR(255) NOT NULL, scheduled_date VARCHAR(255) NOT NULL)";
+    $sql = "DROP TABLE IF EXISTS $tablename";
+    $conn->query($sql);
+
+    $sql = "CREATE TABLE $tablename (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL DEFAULT 'Untitled',
+    subject VARCHAR(255) NOT NULL DEFAULT 'General',
+    description VARCHAR(255) NOT NULL DEFAULT 'No description',
+    date VARCHAR(20) NOT NULL,
+    link VARCHAR(255) NOT NULL DEFAULT '#',
+    host_id VARCHAR(255) NOT NULL DEFAULT '0',
+    sender_ip VARCHAR(255) NOT NULL DEFAULT '0.0.0.0',
+    scheduled_date VARCHAR(255) NOT NULL DEFAULT '1970-01-01 00:00:00'
+    )";
 
     if ($conn->query($sql)){
-        echo "Table created";
+        echo "Rooms table created\n";
     } else {
-        echo "Table exists, or bad";
+        echo "Rooms table exists, or bad\n";
     }
 
     $tablename = "tokens";
-    $sql = "CREATE TABLE $tablename 
-    (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, is_valid VARCHAR(2) NOT NULL, sender_ip VARCHAR(255) NOT NULL, visit_date VARCHAR(255) NOT NULL)";
+    $sql = "DROP TABLE IF EXISTS $tablename";
+    $conn->query($sql);
+
+    $sql = "CREATE TABLE $tablename (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    is_valid VARCHAR(2) NOT NULL DEFAULT 'N',
+    sender_ip VARCHAR(255) NOT NULL DEFAULT '0.0.0.0',
+    visit_date VARCHAR(255) NOT NULL DEFAULT '1970-01-01 00:00:00'
+    )";
 
     if ($conn->query($sql)){
-        echo "Table created";
+        echo "Tokens table created\n";
     } else {
-        echo "Table exists, or bad";
+        echo "Tokens table exists, or bad\n";
     }
 
     $conn->close();
-
 }
+
 
 function login($conn, $given_email, $given_password){
     $sql = "SELECT * FROM users";

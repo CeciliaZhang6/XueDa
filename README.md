@@ -5,13 +5,14 @@ Website home page: http://uccainc.com/csp1/index.php
 TODO:
 - user profile room update
 - user profile room delete
-- fix profile front end & create forms for user room delete/update
 - blocked list
+- password hashing
 
 DEBUG LIST:
 - home page banner control (dots on bottom) not precise
 
 DONE!!:
+- fix profile front end & create forms for user room delete/update
 - add SESSION for bio, username, etc.
 - user profile update front end: 1. add button to display update form 2. form styling
 - user profile edit/update backend done
