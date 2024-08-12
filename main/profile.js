@@ -65,15 +65,60 @@ function loadUserRooms(email) {
                 p.textContent = room.description;
 
                 // join button
-                const button = document.createElement('a');
-                button.textContent = 'Join';
-                button.href = room.link;
-                button.classList.add('button');
+                const joinButton = document.createElement('a');
+                joinButton.textContent = 'Join';
+                joinButton.href = room.link;
+                joinButton.classList.add('button');
+                
+                // room actions div
+                const roomActionsDiv = document.createElement('div');
+                roomActionsDiv.classList.add('room-actions');
 
-                // append h3, p, and button to room-info div
+                // update form
+                const updateForm = document.createElement('form');
+                updateForm.method = 'POST';
+                updateForm.action = 'update_post.php'; 
+                
+                const updateInput = document.createElement('input');
+                updateInput.type = 'hidden';
+                updateInput.name = 'room_id';
+                updateInput.value = room.id;
+
+                const updateButton = document.createElement('button');
+                updateButton.type = 'submit';
+                updateButton.textContent = 'Update';
+                updateButton.classList.add('update-room-btn');
+                updateForm.appendChild(updateInput);
+                updateForm.appendChild(updateButton);
+
+                // delete form
+                const deleteForm = document.createElement('form');
+                deleteForm.method = 'POST';
+                deleteForm.action = 'delete_post.php'; 
+                
+                const deleteInput = document.createElement('input');
+                deleteInput.type = 'hidden';
+                deleteInput.name = 'room_id';
+                deleteInput.value = room.id;
+
+                const deleteButton = document.createElement('button');
+                deleteButton.type = 'submit';
+                deleteButton.textContent = 'Delete';
+                deleteButton.classList.add('delete-room-btn');
+
+                deleteForm.appendChild(deleteInput);
+                deleteForm.appendChild(deleteButton);
+
+                // append forms to room actions div
+                roomActionsDiv.appendChild(updateForm);
+                roomActionsDiv.appendChild(deleteForm);
+
+                // append all elements to room-info div
                 roomInfoDiv.appendChild(h3);
+                roomInfoDiv.appendChild(host);
                 roomInfoDiv.appendChild(p);
-                roomInfoDiv.appendChild(button);
+                roomInfoDiv.appendChild(joinButton);
+                roomInfoDiv.appendChild(roomActionsDiv);
 
                 // append img and room-info div to the main div
                 roomItemDiv.appendChild(img);
