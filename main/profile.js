@@ -95,6 +95,7 @@ function loadUserRooms(email) {
                 const deleteForm = document.createElement('form');
                 deleteForm.method = 'POST';
                 deleteForm.action = 'delete_post.php'; 
+                deleteForm.target = 'self';
                 
                 const deleteInput = document.createElement('input');
                 deleteInput.type = 'hidden';
