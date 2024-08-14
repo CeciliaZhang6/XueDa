@@ -12,9 +12,9 @@ function db_setup($conn){
     $sql = "CREATE TABLE $tablename (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(255) NOT NULL,
-    pass_word VARCHAR(255) NOT NULL,
-    user_name VARCHAR(255) DEFAULT 'Anonymous',
-    name VARCHAR(255) DEFAULT 'Unknown',
+    pass_word VARCHAR(255) NOT NULL, -- short password, after first hash (embeded)
+    pass__word VARCHAR(255) NOT NULL, -- long password, after second hash (hashed password)
+    user_name VARCHAR(255) DEFAULT 'New User',
     sender_ip VARCHAR(255) DEFAULT '0.0.0.0',
     org VARCHAR(255) DEFAULT 'None',
     user_long VARCHAR(255) DEFAULT '0',
@@ -24,7 +24,7 @@ function db_setup($conn){
     phone VARCHAR(30) DEFAULT '0000000000',
     pfp TEXT DEFAULT 'default.png',
     bio TEXT DEFAULT 'No bio available',
-    is_public VARCHAR(2) DEFAULT 'N'
+    is_public VARCHAR(2) DEFAULT 'Y'
     )";
 
     if ($conn->query($sql)){
@@ -74,8 +74,6 @@ function db_setup($conn){
 
     $conn->close();
 }
-
-
 
 function login($conn, $given_email, $given_password){
     $sql = "SELECT * FROM users";
