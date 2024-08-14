@@ -24,6 +24,8 @@ DONE!!:
 - fetch data in user profile page (for personal profile only)
 - when first time opening up webpage, all rooms cannot be rendered
 
+## 8/12 & 14 Debugging
+
 ## 8/7
 Adding user post delete function and wrapper php. 
 

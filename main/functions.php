@@ -13,24 +13,24 @@ function db_setup($conn){
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(255) NOT NULL,
     pass_word VARCHAR(255) NOT NULL,
-    user_name VARCHAR(255) NOT NULL DEFAULT 'Anonymous',
-    name VARCHAR(255) NOT NULL DEFAULT 'Unknown',
-    sender_ip VARCHAR(255) NOT NULL DEFAULT '0.0.0.0',
-    org VARCHAR(255) NOT NULL DEFAULT 'None',
-    user_long VARCHAR(255) NOT NULL DEFAULT '0',
-    user_lat VARCHAR(255) NOT NULL DEFAULT '0',
+    user_name VARCHAR(255) DEFAULT 'Anonymous',
+    name VARCHAR(255) DEFAULT 'Unknown',
+    sender_ip VARCHAR(255) DEFAULT '0.0.0.0',
+    org VARCHAR(255) DEFAULT 'None',
+    user_long VARCHAR(255) DEFAULT '0',
+    user_lat VARCHAR(255) DEFAULT '0',
     creation_date VARCHAR(255) NOT NULL,
-    allow_loc VARCHAR(2) NOT NULL DEFAULT 'N',
-    phone VARCHAR(30) NOT NULL DEFAULT '0000000000',
-    pfp TEXT NOT NULL DEFAULT 'default.png',
-    bio TEXT NOT NULL DEFAULT 'No bio available',
-    is_public VARCHAR(2) NOT NULL DEFAULT 'N'
+    allow_loc VARCHAR(2) DEFAULT 'N',
+    phone VARCHAR(30) DEFAULT '0000000000',
+    pfp TEXT DEFAULT 'default.png',
+    bio TEXT DEFAULT 'No bio available',
+    is_public VARCHAR(2) DEFAULT 'N'
     )";
 
     if ($conn->query($sql)){
         echo "Users table created\n";
     } else {
-        echo "Users table exists, or bad\n";
+        echo "Error creating users table: " . $conn->error . "\n";
     }
 
     $tablename = "rooms";
@@ -39,20 +39,20 @@ function db_setup($conn){
 
     $sql = "CREATE TABLE $tablename (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(255) NOT NULL DEFAULT 'Untitled',
-    subject VARCHAR(255) NOT NULL DEFAULT 'General',
-    description VARCHAR(255) NOT NULL DEFAULT 'No description',
+    title VARCHAR(255) DEFAULT 'Untitled',
+    subject VARCHAR(255) DEFAULT 'General',
+    description VARCHAR(255) DEFAULT 'No description',
     date VARCHAR(20) NOT NULL,
-    link VARCHAR(255) NOT NULL DEFAULT '#',
-    host_id VARCHAR(255) NOT NULL DEFAULT '0',
-    sender_ip VARCHAR(255) NOT NULL DEFAULT '0.0.0.0',
-    scheduled_date VARCHAR(255) NOT NULL DEFAULT '1970-01-01 00:00:00'
+    link VARCHAR(255) DEFAULT '#',
+    host_id VARCHAR(255) DEFAULT '0',
+    sender_ip VARCHAR(255) DEFAULT '0.0.0.0',
+    scheduled_date VARCHAR(255) DEFAULT '1970-01-01 00:00:00'
     )";
 
     if ($conn->query($sql)){
         echo "Rooms table created\n";
     } else {
-        echo "Rooms table exists, or bad\n";
+        echo "Error creating rooms table: " . $conn->error . "\n";
     }
 
     $tablename = "tokens";
@@ -61,19 +61,20 @@ function db_setup($conn){
 
     $sql = "CREATE TABLE $tablename (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    is_valid VARCHAR(2) NOT NULL DEFAULT 'N',
-    sender_ip VARCHAR(255) NOT NULL DEFAULT '0.0.0.0',
-    visit_date VARCHAR(255) NOT NULL DEFAULT '1970-01-01 00:00:00'
+    is_valid VARCHAR(2) DEFAULT 'N',
+    sender_ip VARCHAR(255) DEFAULT '0.0.0.0',
+    visit_date VARCHAR(255) DEFAULT '1970-01-01 00:00:00'
     )";
 
     if ($conn->query($sql)){
         echo "Tokens table created\n";
     } else {
-        echo "Tokens table exists, or bad\n";
+        echo "Error creating tokens table: " . $conn->error . "\n";
     }
 
     $conn->close();
 }
+
 
 
 function login($conn, $given_email, $given_password){
