@@ -126,8 +126,6 @@ function user_res_auth($conn, $given_email){
         }
         
     }
-
-    $conn->close();
 }
 
 // sets up directory
