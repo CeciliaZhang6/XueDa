@@ -10,6 +10,9 @@ $password = $_POST['password'];
 $date = date('Y-m-d H:i:s');
 
 if (isset($email) && isset($password)) {
+    // validate params
+    user_res_auth($conn, $email);
+    
     // Prevent SQL injection by using prepared statements
     $stmt = $conn->prepare("INSERT INTO users (email, pass_word, creation_date) VALUES (?, ?, ?)");
     
