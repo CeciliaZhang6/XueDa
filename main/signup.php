@@ -10,6 +10,7 @@ $password = $_POST['password'];
 $date = date('Y-m-d');
 
 if (isset($email) && isset($password)) {
+
     // validate params
     user_res_auth($conn, $email);
     
@@ -32,6 +33,7 @@ if (isset($email) && isset($password)) {
         echo "User data inserted successfully\n";
         echo "Email: $email \n";
 
+
         create_base_dir($conn, $email);
 
         login($conn, $email, $password);
@@ -43,10 +45,13 @@ if (isset($email) && isset($password)) {
     } else {
         die("Error inserting into user table: " . $stmt->error);
     }
-  
+ 
 } else {
     die("ERROR: empty email or password");
 }
 
+
 $conn->close();
 ?>
+
+
