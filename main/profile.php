@@ -25,11 +25,11 @@ echo '
         <section class="profile-banner">
             <div class="profile-header">
                 <div class="profile-avatar">XD</div>
-                <h1>Username</h1>
+                <h1></h1>
                 <p id="cur_user" style="display:none;">'. $_SESSION["curr_user"] .'</p>
             </div>
         </section>
-        <section class="profile-content">
+        <section class="profile-content">Username
             <div class="profile-info">
                 <h2>Account Info</h2>
                 <div class="account-info-display" id="account-info-display">

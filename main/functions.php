@@ -83,15 +83,16 @@ function login($conn, $given_email, $given_password){
     if($res->num_rows > 0){
         while($row = $res->fetch_assoc()){
             $email = $row['email'];
-            $password = $row['pass_word'];
+            $long_password = $row['pass__word'];
 
             if($email === $given_email){
-                if($password === $given_password){
+                if(password_verify($given_password, $long_password)){
                     $_SESSION["curr_user_name"] = $row['user_name'];
                     $_SESSION["curr_user_bio"] = $row['bio'];
                     $_SESSION['curr_user'] = $email;
                     $_SESSION["login_status"] = TRUE;
                     $_SESSION["member_since"] = $row['creation_date'];
+                    $_SESSION["curr_user_name"] = $row['user_name'];
                     return 1; // login success
 
                 } else {
@@ -261,7 +262,7 @@ function generateRandomString($length = 6) {
     $randomString = '';
 
     for ($i = 0; $i < $length; $i++) {
-        $randomString .= $characters[random_int(0, $charactersLength - 1)];
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
     }
 
     return $randomString;

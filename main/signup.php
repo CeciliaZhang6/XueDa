@@ -26,7 +26,7 @@ if (isset($email) && isset($password)) {
     // hash the password before storing it
     $h_password = password_hash($password, PASSWORD_BCRYPT); 
 
-    $stmt->bind_param("sss", $email, $e_password, $h_password, $default_username, $date);
+    $stmt->bind_param("sssss", $email, $e_password, $h_password, $default_username, $date);
 
     if ($stmt->execute()) {
         echo "User data inserted successfully\n";
@@ -34,8 +34,7 @@ if (isset($email) && isset($password)) {
 
         create_base_dir($conn, $email);
 
-        $_SESSION["login_status"] = TRUE;
-        $_SESSION["curr_user"] = $email;
+        login($conn, $email, $password);
         
         $stmt->close();
         $conn->close();

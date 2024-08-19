@@ -20,9 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $login_status = login($conn, $email, $password);
 
     if ($login_status === 1) {
-        
+        // sessions are set in login()
         $conn->close();
-        // Redirect to home page or dashboard after successful login
+        // redirect to home page or dashboard after successful login
         header("Location: index.php");
         exit();
     } elseif ($login_status === 0) {
