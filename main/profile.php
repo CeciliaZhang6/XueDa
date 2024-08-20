@@ -25,7 +25,7 @@ echo '
         <section class="profile-banner">
             <div class="profile-header">
                 <div class="profile-avatar">XD</div>
-                <h1></h1>
+                <h1>'. $_SESSION["curr_user_name"] .'</h1>
                 <p id="cur_user" style="display:none;">'. $_SESSION["curr_user"] .'</p>
             </div>
         </section>
@@ -66,6 +66,7 @@ echo '
             </div>
             
         </section>
+
         
     </main>
     <footer>

@@ -12,11 +12,12 @@ if (!isset($_SESSION['curr_user']) || $_SESSION['curr_user'] === 'guest') {
 $title = $_POST['title'];
 $description = $_POST['description'];
 $link = $_POST['link'];
-$host = $_SESSION['curr_user'];
+$host_email = $_SESSION['curr_user'];
+$host_name = $_SESSION["curr_user_name"];
 $date = date('Y-m-d H:i:s');
 
-$sql = "INSERT INTO rooms (title, description, date, link, host_id) 
-VALUES ('$title', '$description', '$date', '$link', '$host')";
+$sql = "INSERT INTO rooms (title, description, date, link, host_id, host_name) 
+VALUES ('$title', '$description', '$date', '$link', '$host_email', '$host_name')";
 
 $res = $conn->query($sql);
 

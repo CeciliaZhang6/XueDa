@@ -45,6 +45,7 @@ function db_setup($conn){
     date VARCHAR(20) NOT NULL,
     link VARCHAR(255) DEFAULT '#',
     host_id VARCHAR(255) DEFAULT '0',
+    host_name VARCHAR(255) DEFAULT 'username',
     sender_ip VARCHAR(255) DEFAULT '0.0.0.0',
     scheduled_date VARCHAR(255) DEFAULT '1970-01-01 00:00:00'
     )";
@@ -190,8 +191,6 @@ function create_base_dir($conn, $uid){
     // } else {
     //     echo(" Blocked Dir created. ");
     // }
-
-    $conn->close();
 
 }
 

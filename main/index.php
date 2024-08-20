@@ -19,7 +19,7 @@ echo '
 <body>
     <header>
         <nav>
-        <div id="welcome-message">Welcome, <span id="username">' . $_SESSION["curr_user"] . '</span>!</div>
+        <div id="welcome-message">Welcome, <span id="username">' . $_SESSION["curr_user_name"] . '</span>!</div>
         <ul>
             <li id="login-signup"><a href="http://www.uccainc.com/csp1/login.php">Login</a></li>
             <li id="view-profile" style="display: none;"><a href="http://www.uccainc.com/csp1/profile.php">View Profile</a></li>
