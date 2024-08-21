@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     // host email
                     const host = document.createElement('p');
-                    host.textContent = room.host_name;
+                    host.textContent = room.host_id;
 
                     // p description
                     const p = document.createElement('p');

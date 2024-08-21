@@ -56,10 +56,6 @@ function loadUserRooms(email) {
                 const h3 = document.createElement('h3');
                 h3.textContent = room.title;
 
-                // host email
-                const host = document.createElement('p');
-                host.textContent = room.host_name;
-
                 // p description
                 const p = document.createElement('p');
                 p.textContent = room.description;
