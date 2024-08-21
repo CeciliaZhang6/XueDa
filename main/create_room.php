@@ -23,7 +23,7 @@ $res = $conn->query($sql);
 
 if($res === TRUE){
     echo "room inserted";
-    cur_user_post($conn, $host); // host = email
+    cur_user_post($conn, $host_email); // host = email
     $conn->close();
     header("Location: profile.php");
 }else {

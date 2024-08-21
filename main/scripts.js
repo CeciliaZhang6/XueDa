@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     type();
 
     // Banner image and dots functionality
-    const banners = ['pic/banner1.jpg', 'pic/banner2.jpg', 'pic/room3.jpg'];
+    const banners = ['http://www.uccainc.com/csp1/pic/banner1.jpg', 'http://www.uccainc.com/csp1/pic/banner2.jpg', 'http://www.uccainc.com/csp1/pic/banner3.jpg'];
     const dots = document.querySelectorAll('.dot');
     let bannerIndex = 0;
 
@@ -57,15 +57,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     autoSlide();
 
+    const searchInput = document.getElementById('search-input');
+    const container = document.getElementById('rooms-list');
 
     // display room items
-    function fetchData(url){
+    function fetchData(url, query = ''){
         fetch(url).then(response => response.json()).then(data => {
             // data is the entire json file
-            const container = document.getElementById('rooms-list');
+            const filteredRooms = data.filter( room => 
+                room.title.toLowerCase().includes(query) ||
+                room.description.toLowerCase().includes(query) ||
+                room.host_name.toLowerCase.includes(query)
+            );
 
-            if (data.length > 0) {
-                data.forEach(room => {
+            container.innerHTML = '';
+
+            if (filteredRooms.length > 0) {
+                filteredRooms.forEach(room => {
                     console.log("start fetching");
 
                     // room-item
@@ -87,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     // host email
                     const host = document.createElement('p');
-                    host.textContent = room.host_id;
+                    host.textContent = room.host_name;
 
                     // p description
                     const p = document.createElement('p');
@@ -118,15 +126,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     container.appendChild(roomItemDiv);
                 });
             } else {
-                container.textContent = 'No data found';
+                container.textContent = 'No rooms found';
             }
             
         })
+        .catch(error => {
+            console.error("Error fetching data:", error);
+        });
     }
 
     const url = "http://www.uccainc.com/csp1/roomAPI.php";
 
     fetchData(url);
+
+    searchInput.addEventListener('input', function(){
+        const query = searchInput.ariaValueMax.toLocaleLowerCase();
+        fetchData(url, query);
+    });
 
     function updateNavBar() {
         const usernameSpan = document.getElementById('username').innerHTML;

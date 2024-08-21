@@ -19,7 +19,7 @@ echo '
 <body>
     <header>
         <nav>
-        <div id="welcome-message">Welcome, <span id="username">' . $_SESSION["curr_user_name"] . '</span>!</div>
+        <div id="welcome-message">Welcome, <span id="username">' . htmlspecialchars($_SESSION["curr_user_name"]) . '</span>!</div>
         <ul>
             <li id="login-signup"><a href="http://www.uccainc.com/csp1/login.php">Login</a></li>
             <li id="view-profile" style="display: none;"><a href="http://www.uccainc.com/csp1/profile.php">View Profile</a></li>
@@ -43,19 +43,16 @@ echo '
         </section>
 
         <section class="search-bar">
-            <input type="text" placeholder="Search rooms...">
+            <input type="text" id="search-input" placeholder="Search rooms...">
         </section>
 
         <section class="popular-rooms">
-            <h2>Popular Public Rooms</h2>
+            <h2>All Public Rooms</h2>
 
             <div class="rooms-list" id="rooms-list">
 
             </div>
 
-            <div class="all-rooms">
-                <button>All Rooms</button>
-            </div>
         </section>
     </main>
     <footer>

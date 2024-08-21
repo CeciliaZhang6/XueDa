@@ -21,6 +21,10 @@ if ($u !== ""){
         echo "info updated!!";
         $_SESSION["curr_user_name"] = $u;
         $_SESSION["curr_user_bio"] = $b;
+
+        //update room api
+        cur_user_post($conn, $email);
+
         $conn->close();
         header("Location: profile.php");
     }else{
