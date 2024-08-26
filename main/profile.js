@@ -10,17 +10,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const editProfileBtn = document.querySelector('.edit-profile-btn');
     const accountInfoDisplay = document.getElementById('account-info-display');
     const accountInfoEdit = document.getElementById('account-info-edit');
-    const cancelBtn = document.querySelector('.cancel-btn');
-    const updateForm = document.getElementById('update-form');
+    const cancelBtnProfile = document.getElementById('cancel-btn-profile');
+    const cancelBtnPost = document.getElementById('cancel-btn-post');
+    const dimView = document.getElementById('dim-background');
+    const editPost = this.documentElement.getElementById('edit-post-btn');
 
     editProfileBtn.addEventListener('click', function() {
         accountInfoDisplay.style.display = 'none';
         accountInfoEdit.style.display = 'block';
     });
 
-    cancelBtn.addEventListener('click', function() {
+    cancelBtnProfile.addEventListener('click', function() {
         accountInfoDisplay.style.display = 'block';
         accountInfoEdit.style.display = 'none';
+    });
+
+    editPost.addEventListener('click', function() {
+        dimView.style.display = 'block';
+    });
+
+    cancelBtnPost.addEventListener('click', function() {
+        dimView.style.display = 'none';
     });
 
 });
@@ -60,6 +70,11 @@ function loadUserRooms(email) {
                 const p = document.createElement('p');
                 p.textContent = room.description;
 
+                // room id
+                const roomID = document.createElement('p');
+                roomID.textContent = room.id;
+                roomID.style.display = none;
+
                 // join button
                 const joinButton = document.createElement('a');
                 joinButton.textContent = 'Join';
@@ -70,22 +85,28 @@ function loadUserRooms(email) {
                 const roomActionsDiv = document.createElement('div');
                 roomActionsDiv.classList.add('room-actions');
 
-                // update form
-                const updateForm = document.createElement('form');
-                updateForm.method = 'POST';
-                updateForm.action = 'update_post.php'; 
-                
-                const updateInput = document.createElement('input');
-                updateInput.type = 'hidden';
-                updateInput.name = 'room_id';
-                updateInput.value = room.id;
+                // edit button
+                const editBtn = document.createElement('button');
+                editBtn.textContent = "edit";
+                editBtn.classList.add("update-btn");
+                editBtn.setAttribute("edit-post-btn", "edit");
 
-                const updateButton = document.createElement('button');
-                updateButton.type = 'submit';
-                updateButton.textContent = 'Update';
-                updateButton.classList.add('update-room-btn');
-                updateForm.appendChild(updateInput);
-                updateForm.appendChild(updateButton);
+                // // update form
+                // const updateForm = document.createElement('form');
+                // updateForm.method = 'POST';
+                // updateForm.action = 'update_post.php'; 
+                
+                // const updateInput = document.createElement('input');
+                // updateInput.type = 'hidden';
+                // updateInput.name = 'room_id';
+                // updateInput.value = room.id;
+
+                // const updateButton = document.createElement('button');
+                // updateButton.type = 'submit';
+                // updateButton.textContent = 'Update';
+                // updateButton.classList.add('update-room-btn');
+                // updateForm.appendChild(updateInput);
+                // updateForm.appendChild(updateButton);
 
                 // delete form
                 const deleteForm = document.createElement('form');
@@ -107,13 +128,14 @@ function loadUserRooms(email) {
                 deleteForm.appendChild(deleteButton);
 
                 // append forms to room actions div
-                roomActionsDiv.appendChild(updateForm);
+                roomActionsDiv.appendChild(editBtn);
                 roomActionsDiv.appendChild(deleteForm);
 
                 // append all elements to room-info div
                 roomInfoDiv.appendChild(h3);
                 roomInfoDiv.appendChild(host);
                 roomInfoDiv.appendChild(p);
+                roomInfoDiv.appendChild(roomID);
                 roomInfoDiv.appendChild(joinButton);
                 roomInfoDiv.appendChild(roomActionsDiv);
 

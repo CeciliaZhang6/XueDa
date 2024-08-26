@@ -49,7 +49,7 @@ echo '
                         
                         <div class="button-group">
                             <button type="submit" class="update-btn">Update</button>
-                            <button type="button" class="cancel-btn">Cancel</button>
+                            <button type="button" class="cancel-btn" id="cancel-btn-profile">Cancel</button>
                         </div>
                     </form>
                 </div>
@@ -62,6 +62,26 @@ echo '
                 </div>
                 <div class="rooms-list" id="rooms-list">
                     <!-- fetch room items here -->
+                </div>
+            </div>
+
+            <div class="dim-background" id="dim-background" style="display: none;">
+                <div class="room-info-edit">
+                    <form class="update-form" action="http://www.uccainc.com/csp1/update_post.php" method="post">
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" name="title" value="your original title">
+                        
+                        <label for="desc">Description:</label>
+                        <textarea id="desc" name="desc">description goes here</textarea>
+            
+                        <label for="link">Link:</label>
+                        <input type="text" id="link" name="link" value="your original link">
+                        
+                        <div class="button-group">
+                            <button type="submit" class="update-btn">Update</button>
+                            <button type="button" class="cancel-btn" id="cancel-btn-post">Cancel</button>
+                        </div>
+                    </form>
                 </div>
             </div>
             
