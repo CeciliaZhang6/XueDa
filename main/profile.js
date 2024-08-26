@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const cancelBtnProfile = document.getElementById('cancel-btn-profile');
     const cancelBtnPost = document.getElementById('cancel-btn-post');
     const dimView = document.getElementById('dim-background');
-    const editPost = this.documentElement.getElementById('edit-post-btn');
+    const editPost = document.getElementById('edit-post-btn');
 
     editProfileBtn.addEventListener('click', function() {
         accountInfoDisplay.style.display = 'none';
@@ -73,8 +73,8 @@ function loadUserRooms(email) {
                 // room id
                 const roomID = document.createElement('p');
                 roomID.textContent = room.id;
-                roomID.style.display = none;
-                roomID.setAttribute("room-id", room.id);
+                roomID.style.display = "none";
+                roomID.setAttribute("id", "room-id");
 
                 // join button
                 const joinButton = document.createElement('a');
@@ -90,7 +90,7 @@ function loadUserRooms(email) {
                 const editBtn = document.createElement('button');
                 editBtn.textContent = "edit";
                 editBtn.classList.add("update-btn");
-                editBtn.setAttribute("edit-post-btn", "edit");
+                editBtn.setAttribute("id", "edit-post-btn");
 
                 // // update form
                 // const updateForm = document.createElement('form');
@@ -134,7 +134,6 @@ function loadUserRooms(email) {
 
                 // append all elements to room-info div
                 roomInfoDiv.appendChild(h3);
-                roomInfoDiv.appendChild(host);
                 roomInfoDiv.appendChild(p);
                 roomInfoDiv.appendChild(roomID);
                 roomInfoDiv.appendChild(joinButton);
