@@ -74,6 +74,7 @@ function loadUserRooms(email) {
                 const roomID = document.createElement('p');
                 roomID.textContent = room.id;
                 roomID.style.display = none;
+                roomID.setAttribute("room-id", room.id);
 
                 // join button
                 const joinButton = document.createElement('a');
