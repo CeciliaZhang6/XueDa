@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const cancelBtnProfile = document.getElementById('cancel-btn-profile');
     const cancelBtnPost = document.getElementById('cancel-btn-post');
     const dimView = document.getElementById('dim-background');
-    const editPost = document.getElementById('edit-post-btn');
+    // const editPost = document.getElementById('edit-post-btn');
 
     editProfileBtn.addEventListener('click', function() {
         accountInfoDisplay.style.display = 'none';
@@ -25,9 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
         accountInfoEdit.style.display = 'none';
     });
 
-    editPost.addEventListener('click', function() {
-        dimView.style.display = 'block';
-    });
+    // editPost.addEventListener('click', function() {
+    //     dimView.style.display = 'block';
+    // });
 
     cancelBtnPost.addEventListener('click', function() {
         dimView.style.display = 'none';
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function loadUpdateForm(){
-    
+
 }
 
 function loadUserRooms(email) {
@@ -149,6 +149,11 @@ function loadUserRooms(email) {
 
                 // append the main div to the container
                 container.appendChild(roomItemDiv);
+
+                // Add the event listener here, after the button is created
+                editBtn.addEventListener('click', function() {
+                    dimView.style.display = 'block';
+                });
             });
         } else {
             container.textContent = 'No data found';
