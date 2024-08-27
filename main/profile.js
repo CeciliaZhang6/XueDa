@@ -35,6 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
+function loadUpdateForm(){
+    
+}
+
 function loadUserRooms(email) {
     console.log('Loading user rooms...');
     var url = root_url.concat(email, "/rooms/user_post_api.json");

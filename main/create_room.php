@@ -24,6 +24,9 @@ $res = $conn->query($sql);
 if($res === TRUE){
     echo "room inserted";
     cur_user_post($conn, $host_email); // host = email
+    $refresh_link = "http://www.uccainc.com/csp1/users/". $host_email ."/rooms/user_post_api.json";
+    // refresh api endpoint
+    file_get_contents($refresh_link);
     $conn->close();
     header("Location: profile.php");
 }else {

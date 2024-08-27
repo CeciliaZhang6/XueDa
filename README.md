@@ -4,14 +4,15 @@ Website home page: http://uccainc.com/csp1/index.php
 
 TODO:
 - user profile room update
-- user profile room delete
-- blocked list
-- password hashing
 
-DEBUG LIST:
+DEBUG / FUTURE LIST:
 - home page banner control (dots on bottom) not precise
+- blocked list
+- check other user's profile
 
 DONE!!:
+- user profile room delete
+- password hashing
 - fix profile front end & create forms for user room delete/update
 - add SESSION for bio, username, etc.
 - user profile update front end: 1. add button to display update form 2. form styling
@@ -24,7 +25,14 @@ DONE!!:
 - fetch data in user profile page (for personal profile only)
 - when first time opening up webpage, all rooms cannot be rendered
 
-## 8/19
+## 8/26
+- adding room update form
+- 
+
+## 8/19 & 21 Implementing & Testing
+- user profile room delete implemented and tested
+- added password hashing when auth
+
 
 ## 8/12 & 14 Debugging
 - Fixed signup form bug (caused by conn close). 
