@@ -255,6 +255,22 @@ function delete_post($conn, $id, $email){
     $conn->close();
 }
 
+function update_post($conn, $rid, $t, $d, $l){
+    $sql = "UPDATE rooms 
+    SET title='$t', description='$d', link='$l'
+    WHERE id = '$rid'";
+
+    $res = $conn->query($sql);
+    
+    if ($res === TRUE){
+        echo "delete done";
+    } else {
+        echo "delete failed!!";
+    }
+
+    $conn->close();
+}
+
 function generateRandomString($length = 6) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);

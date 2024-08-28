@@ -4,9 +4,11 @@ session_start();
 include_once("functions.php");
 
 $room_id = $_POST['room_id'];
-$email = $_SESSION['curr_user'];
+$title = $_POST['title'];
+$desc = $_POST['desc'];
+$link = $_POST['link'];
 
-update_post($conn, $room_id, $email);
+update_post($conn, $room_id, $title, $desc, $link);
 
 cur_user_post($conn, $email);
 

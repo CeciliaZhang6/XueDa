@@ -76,6 +76,8 @@ echo '
             
                         <label for="link">Link:</label>
                         <input type="text" id="link" name="link" value="your original link">
+
+                        <input type="hidden" id="room_id" name="room_id" value="room_id">
                         
                         <div class="button-group">
                             <button type="submit" class="update-btn">Update</button>

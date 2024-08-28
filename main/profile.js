@@ -35,10 +35,11 @@ function loadUpdateForm(id){
     const title = document.getElementById("title");
     const desc = document.getElementById("desc");
     const link = document.getElementById("link");
+    const room_id = document.getElementById("room_id");
     var data = [];
 
     // find target room info
-    for(let i = 0; i < rooms_data.length(); i++){
+    for(let i = 0; i < rooms_data.length; i++){
         if (id == rooms_data[i][3]){
             data = rooms_data[i];
             break;
@@ -54,6 +55,7 @@ function loadUpdateForm(id){
     title.value = data[0];
     desc.innerHTML = data[1];
     link.value = data[2];
+    room_id.value = id;
 }
 
 function loadUserRooms(email) {
@@ -117,23 +119,6 @@ function loadUserRooms(email) {
                 editBtn.textContent = "edit";
                 editBtn.classList.add("update-btn");
                 editBtn.setAttribute("id", room.id);
-
-                // // update form
-                // const updateForm = document.createElement('form');
-                // updateForm.method = 'POST';
-                // updateForm.action = 'update_post.php'; 
-                
-                // const updateInput = document.createElement('input');
-                // updateInput.type = 'hidden';
-                // updateInput.name = 'room_id';
-                // updateInput.value = room.id;
-
-                // const updateButton = document.createElement('button');
-                // updateButton.type = 'submit';
-                // updateButton.textContent = 'Update';
-                // updateButton.classList.add('update-room-btn');
-                // updateForm.appendChild(updateInput);
-                // updateForm.appendChild(updateButton);
 
                 // delete form
                 const deleteForm = document.createElement('form');
