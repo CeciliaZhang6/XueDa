@@ -2,7 +2,7 @@
 
 include_once('dbh.php');
 
-$sql = "SELECT * FROM rooms";
+$sql = "SELECT * FROM rooms ORDER BY id desc"; // 降序排列
 
 $api = [];
 

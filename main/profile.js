@@ -1,6 +1,7 @@
 var root_url = "http://www.uccainc.com/csp1/users/";
 var cur_user = document.getElementById("cur_user").innerHTML;
 var target_user =""; // the user (TODO: allow viewing other user's profile)
+var rooms_data = [];
 
 console.log("a=========>", cur_user);
 const dimView = document.getElementById('dim-background');
@@ -13,8 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const accountInfoEdit = document.getElementById('account-info-edit');
     const cancelBtnProfile = document.getElementById('cancel-btn-profile');
     const cancelBtnPost = document.getElementById('cancel-btn-post');
-    // const dimView = document.getElementById('dim-background');
-    // const editPost = document.getElementById('edit-post-btn');
 
     editProfileBtn.addEventListener('click', function() {
         accountInfoDisplay.style.display = 'none';
@@ -26,18 +25,35 @@ document.addEventListener('DOMContentLoaded', function() {
         accountInfoEdit.style.display = 'none';
     });
 
-    // editPost.addEventListener('click', function() {
-    //     dimView.style.display = 'block';
-    // });
-
     cancelBtnPost.addEventListener('click', function() {
         dimView.style.display = 'none';
     });
 
 });
 
-function loadUpdateForm(){
+function loadUpdateForm(id){
+    const title = document.getElementById("title");
+    const desc = document.getElementById("desc");
+    const link = document.getElementById("link");
+    var data = [];
 
+    // find target room info
+    for(let i = 0; i < rooms_data.length(); i++){
+        if (id == rooms_data[i][3]){
+            data = rooms_data[i];
+            break;
+        }
+    }
+
+    if(data == []){
+        console.log("error, id not found");
+    }
+
+    // var room_info = [room.title, room.description, room.link, room.id]; 
+
+    title.value = data[0];
+    desc.innerHTML = data[1];
+    link.value = data[2];
 }
 
 function loadUserRooms(email) {
@@ -53,6 +69,11 @@ function loadUserRooms(email) {
         if (data.length > 0) {
             data.forEach(room => {
                 console.log("start fetching");
+                // make local temp storage
+                // inner array, all data of 1 room
+                var room_info = [room.title, room.description, room.link, room.id];
+                // push current room info to the collection
+                rooms_data.push(room_info);
 
                 // room-item
                 const roomItemDiv = document.createElement('div');
@@ -95,7 +116,7 @@ function loadUserRooms(email) {
                 const editBtn = document.createElement('button');
                 editBtn.textContent = "edit";
                 editBtn.classList.add("update-btn");
-                editBtn.setAttribute("id", "edit-post-btn");
+                editBtn.setAttribute("id", room.id);
 
                 // // update form
                 // const updateForm = document.createElement('form');

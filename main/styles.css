@@ -519,6 +519,10 @@ footer {
 
 /* The room-info-edit class handles centering */
 .room-info-edit {
+    top: 50%;
+    left: 50%;
+    position: relative;
+    float: left;
     background-color: #fff;
     padding: 2em;
     border-radius: 5px;
