@@ -25,6 +25,10 @@ DONE!!:
 - fetch data in user profile page (for personal profile only)
 - when first time opening up webpage, all rooms cannot be rendered
 
+## 8/28
+- now room postings are decending
+- 
+
 ## 8/26
 - adding room update form
 - fixing an issue where newly created room is not directly displaying on user profile

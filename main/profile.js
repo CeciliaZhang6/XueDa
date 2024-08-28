@@ -175,6 +175,7 @@ function loadUserRooms(email) {
                 // Add the event listener here, after the button is created
                 editBtn.addEventListener('click', function() {
                     dimView.style.display = 'block';
+                    loadUpdateForm(editBtn.id);
                 });
             });
         } else {
