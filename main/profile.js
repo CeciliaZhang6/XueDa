@@ -3,6 +3,7 @@ var cur_user = document.getElementById("cur_user").innerHTML;
 var target_user =""; // the user (TODO: allow viewing other user's profile)
 
 console.log("a=========>", cur_user);
+const dimView = document.getElementById('dim-background');
 
 document.addEventListener('DOMContentLoaded', function() {
     loadUserRooms(cur_user);
@@ -12,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const accountInfoEdit = document.getElementById('account-info-edit');
     const cancelBtnProfile = document.getElementById('cancel-btn-profile');
     const cancelBtnPost = document.getElementById('cancel-btn-post');
-    const dimView = document.getElementById('dim-background');
+    // const dimView = document.getElementById('dim-background');
     // const editPost = document.getElementById('edit-post-btn');
 
     editProfileBtn.addEventListener('click', function() {

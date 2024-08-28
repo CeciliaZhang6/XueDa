@@ -27,7 +27,7 @@ DONE!!:
 
 ## 8/26
 - adding room update form
-- 
+- fixing an issue where newly created room is not directly displaying on user profile
 
 ## 8/19 & 21 Implementing & Testing
 - user profile room delete implemented and tested
