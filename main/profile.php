@@ -1,5 +1,5 @@
 <?php
-    include_once('dbh.php');
+    include_once('functions.php');
     session_start();
     fetch_new_api($conn, $_SESSION['curr_email']);
 

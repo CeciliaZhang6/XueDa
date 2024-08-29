@@ -223,8 +223,6 @@ function delete_post($conn, $id, $email){
     } else {
         echo "delete failed!!";
     }
-
-    $conn->close();
 }
 
 function update_post($conn, $rid, $t, $d, $l){
@@ -289,8 +287,6 @@ function fetch_new_api($conn, $email){
     if ($res === false){
         $error = error_get_last();
         die("Cannot write. Error:" . $error['message']);
-    } else {
-        echo "File written done";
     }
 }
 

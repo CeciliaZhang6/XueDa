@@ -169,9 +169,3 @@ function loadUserRooms(email) {
         
     })
 }
-
-
-// function loadRecentActivity() {
-//     // TODO: fetch recent activity
-//     console.log('Loading recent activity...');
-// }
