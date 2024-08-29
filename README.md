@@ -2,15 +2,14 @@
 
 Website home page: http://uccainc.com/csp1/index.php
 
-TODO:
-- user profile room update
-
-DEBUG / FUTURE LIST:
+FUTURE TODO:
 - home page banner control (dots on bottom) not precise
 - blocked list
 - check other user's profile
+- friend db/system
 
 DONE!!:
+- user profile room update
 - user profile room delete
 - password hashing
 - fix profile front end & create forms for user room delete/update
@@ -27,7 +26,8 @@ DONE!!:
 
 ## 8/28
 - now room postings are decending
-- 
+- fixed redirection when updating profile
+- post update implemented and tested
 
 ## 8/26
 - adding room update form
