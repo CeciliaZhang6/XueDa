@@ -2,6 +2,11 @@
 
 Website home page: http://uccainc.com/csp1/index.php
 
+NEAR TODO:
+- join button style
+- no room message
+- fix update form styling (center)
+
 FUTURE TODO:
 - home page banner control (dots on bottom) not precise
 - blocked list
