@@ -448,17 +448,9 @@ footer {
     padding: 10px 20px;
     border: none;
     border-radius: 3px;
+    margin-top: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
-
-.update-btn {
-    background-color: #333;
-    color: #fff;
-}
-
-.update-btn:hover {
-    background-color: #555;
 }
 
 .cancel-btn {
@@ -519,14 +511,14 @@ footer {
 
 /* The room-info-edit class handles centering */
 .room-info-edit {
-    top: 50%;
-    left: 50%;
+    top: 10%;
+    left: 25%;
     position: relative;
     float: left;
     background-color: #fff;
     padding: 2em;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    width: 100%; /* Adjusted for responsive design */
+    width: 100%; 
     max-width: 600px; /* Match the form max-width */
 }

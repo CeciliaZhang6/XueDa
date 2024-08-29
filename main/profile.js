@@ -117,7 +117,7 @@ function loadUserRooms(email) {
                 // edit button
                 const editBtn = document.createElement('button');
                 editBtn.textContent = "edit";
-                editBtn.classList.add("update-btn");
+                editBtn.classList.add("edit-rooms-btn");
                 editBtn.setAttribute("id", room.id);
 
                 // delete form
