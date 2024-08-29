@@ -58,7 +58,6 @@ echo '
             <div class="profile-rooms">
                 <div class="rooms-header">
                     <h2>My Rooms</h2>
-                    <button class="edit-rooms-btn" id="edit-rooms-btn">Edit</button>
                 </div>
                 <div class="rooms-list" id="rooms-list">
                     <!-- fetch room items here -->
