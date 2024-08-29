@@ -3,6 +3,7 @@
 session_start();
 include_once("functions.php");
 
+$email = $_SESSION['curr_user'];
 $room_id = $_POST['room_id'];
 $title = $_POST['title'];
 $desc = $_POST['desc'];
@@ -17,6 +18,5 @@ $refresh_link = "http://www.uccainc.com/csp1/users/". $email ."/rooms/user_post_
 file_get_contents($refresh_link);
 $conn->close();
 header("Location: profile.php");
-
 
 ?>

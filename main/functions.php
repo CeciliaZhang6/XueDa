@@ -166,32 +166,6 @@ function create_base_dir($conn, $uid){
         die(" user_post_api failed to create...");
     }
 
-    // $path = "/home/uccaciyo/public_html/csp1/" . $base_dir . "/" . $uid . "/" . $sub_dir_2;
-
-    // // check valid path
-    // if (!file_exists($path)){
-    //     $res = mkdir($path, 0755, true); // 0755 = normal user
-    // }
-
-    // if ($res === FALSE){
-    //     die(" ERROR: mkdir failed - pfp");
-    // } else {
-    //     echo(" Pfp Dir created. ");
-    // }
-
-    // $path = "/home/uccaciyo/public_html/csp1/" . $base_dir . "/" . $uid . "/" . $sub_dir_3;
-
-    // // check valid path
-    // if (!file_exists($path)){
-    //     $res = mkdir($path, 0755, true); // 0755 = normal user
-    // }
-
-    // if ($res === FALSE){
-    //     die(" ERROR: mkdir failed - blocked");
-    // } else {
-    //     echo(" Blocked Dir created. ");
-    // }
-
 }
 
 // sql is the query to get all data, used to create api
@@ -202,7 +176,7 @@ function cur_user_post($conn, $email){
         die("invalid email -- empty!!");
     }
 
-    $sql = "SELECT * FROM rooms WHERE host_id = '$email'";
+    $sql = "SELECT * FROM rooms WHERE host_id = '$email' ORDER BY id DESC";
 
     $api = [];
     $res = $conn->query($sql);
@@ -238,8 +212,6 @@ function cur_user_post($conn, $email){
     } else {
         echo "File written done";
     }
-
-    $conn->close();
 }
 
 function delete_post($conn, $id, $email){
@@ -263,12 +235,10 @@ function update_post($conn, $rid, $t, $d, $l){
     $res = $conn->query($sql);
     
     if ($res === TRUE){
-        echo "delete done";
+        echo "update done";
     } else {
-        echo "delete failed!!";
+        echo "update failed!!";
     }
-
-    $conn->close();
 }
 
 function generateRandomString($length = 6) {
