@@ -1,6 +1,7 @@
 <?php
     include_once('dbh.php');
     session_start();
+    fetch_new_api($conn, $_SESSION['curr_email']);
 
 echo '
 <!DOCTYPE html>

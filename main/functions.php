@@ -253,4 +253,45 @@ function generateRandomString($length = 6) {
     return $randomString;
 }
 
+function fetch_new_api($conn, $email){
+    if($email === ""){
+        die("invalid email -- empty!!");
+    }
+
+    $sql = "SELECT * FROM rooms WHERE host_id = '$email' ORDER BY id DESC";
+
+    $api = [];
+    $res = $conn->query($sql);
+
+    if ($res->num_rows > 0){
+        while($row = $res->fetch_assoc()){
+            $api[] = $row;
+        }
+    }
+
+    $api_json = json_encode($api);
+
+    $dir = "/home/uccaciyo/public_html/csp1/users/" . $email . "/rooms";
+
+    // create dir if not exist
+    if (!is_dir($dir)){
+        mkdir($dir, 0777, true); // 0777 = super user
+    }
+
+    $file_path = $dir . "/user_post_api.json";
+
+    // check write permission
+    if (!is_writable($dir)){
+        die("Cannot write to dir:" . $dir);
+    }
+
+    $res = file_put_contents($file_path, $api_json);
+    if ($res === false){
+        $error = error_get_last();
+        die("Cannot write. Error:" . $error['message']);
+    } else {
+        echo "File written done";
+    }
+}
+
 ?>
